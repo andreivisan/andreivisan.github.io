@@ -8,4 +8,4 @@ published: true
 My name is Andrei Visan and this is my technical blog.
 
 
-[email@domain.com](mailto:andrei.m.visan@gmail.com)
+[andrei.m.visan@gmail.com](mailto:andrei.m.visan@gmail.com)
