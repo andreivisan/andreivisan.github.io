@@ -1,11 +1,11 @@
 ---
-published: false
+published: true
 ---
 
 ## Merge sort in Java
     
 ### Merge sort definition
-
+Merge sort
 
 ### Divide and conquer definition
 
@@ -17,11 +17,3 @@ published: false
 
 
 ### Complexity analysis
-
-
-
-
-
-
-
-
