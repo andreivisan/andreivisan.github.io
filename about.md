@@ -1,10 +1,11 @@
 ---
 layout: page
-title: About
+title: About Andrei Visan
 permalink: /about/
+published: true
 ---
 
-Some information about you!
+My name is Andrei Visan and this is my technical blog.
 
 ### More Information
 
