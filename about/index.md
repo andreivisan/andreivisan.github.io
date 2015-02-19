@@ -1,8 +1,6 @@
 ---
 layout: page
-title: About Andrei Visan
-permalink: /about/
-published: true
+title: About
 ---
 
 My name is Andrei Visan and this is my technical blog. I am a passionate software engineer who is interested in new technologies but also in learning and applying best practices in every piece of code I write. I am a strong believer in sharing knowledge with the community and also learn from others.
