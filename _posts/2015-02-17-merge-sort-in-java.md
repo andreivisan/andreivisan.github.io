@@ -40,35 +40,37 @@ public int[] divideAndConquer(int[] inputArray) {
 
 Next we move forward to merging and sorting the sub-arrays.
 
-	public void merge(int[] leftArray, int[] rightArray, int[] sortedArray) {
-    	int leftArrayLength = leftArray.length;
-    	int rightArrayLength = rightArray.length;
-    	int i = 0;
-    	int j = 0;
-    	int k = 0;
-    	while(i < leftArrayLength && j < rightArrayLength) {
-      		if(leftArray[i] < rightArray[j]) {
-        		sortedArray[k] = leftArray[i];
-        		i++;
-      		} else {
-        		sortedArray[k] = rightArray[j];
-        		j++;
-      		}
-      		k++;
-    	}
-        //copy the rest of the first half if there is anything left
-    	while(i < leftArrayLength) {
-      		sortedArray[k] = leftArray[i];
-      		i++;
-      		k++;
-    	}
-        //copy the rest of the second half if there is anything left
-    	while(j < rightArrayLength) {
-      		sortedArray[k] = rightArray[j];
-      		j++;
-      		k++;
-    	}
-  	}
+``` java
+  public void merge(int[] leftArray, int[] rightArray, int[] sortedArray) {
+    int leftArrayLength = leftArray.length;
+    int rightArrayLength = rightArray.length;
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    while(i < leftArrayLength && j < rightArrayLength) {
+      if(leftArray[i] < rightArray[j]) {
+        sortedArray[k] = leftArray[i];
+        i++;
+      } else {
+        sortedArray[k] = rightArray[j];
+        j++;
+      }
+      k++;
+    }
+    //copy the rest of the first half if there is anything left
+    while(i < leftArrayLength) {
+      sortedArray[k] = leftArray[i];
+      i++;
+      k++;
+    }
+    //copy the rest of the second half if there is anything left
+    while(j < rightArrayLength) {
+      sortedArray[k] = rightArray[j];
+      j++;
+      k++;
+    }
+  }
+```
 
 You can find the full source code on my github repository in the Algorithms project.
 <a href="https://github.com/andreivisan/Algorithms">GitHub - Algorithms</a>
