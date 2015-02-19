@@ -1,13 +1,17 @@
-markdown: redcarpet
-highlighter: null
 permalink: /:title
 
 url:
 baseurl:
 
+markdown: redcarpet
 redcarpet:
-  extensions: [strikethrough, tables]
+  extensions: [strikethrough, tables, autolink]
+highlighter: pygments
 
 sass:
   sass_dir: public/css
   style: :compressed
+  
+gems:
+  - jekyll-redirect-from #https://help.github.com/articles/redirects-on-github-pages
+  - jekyll-mentions
