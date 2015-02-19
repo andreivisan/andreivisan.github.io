@@ -69,6 +69,7 @@ Next we move forward to merging and sorting the sub-arrays.
   	}
 
 You can find the full source code on my github repository in the Algorithms project.
+https://github.com/andreivisan/Algorithms
 
 ### Complexity analysis
 Mergesort sorts in worst case in O(nlogn) time, which makes it one of the fastest array sorting algorithms.
