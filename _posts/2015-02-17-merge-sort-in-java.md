@@ -20,21 +20,23 @@ The image above shows how the array is broken down into sub-arrays until the mos
 ### Java implementation
 We start by creating the divide method that splits the initial array into smaller sub-arrays.
 
-	public int[] divideAndConquer(int[] inputArray) {
-    	int n = inputArray.length;
-    	if(n == 1) {
-      		return inputArray;
-    	}
-    	int mid = n/2;
-    	int[] leftArray = new int[mid];
-    	int[] rightArray = new int[n - mid];
-    	System.arraycopy(inputArray, 0, leftArray, 0, leftArray.length);
-    	System.arraycopy(inputArray, leftArray.length, rightArray, 0, rightArray.length);
-    	divideAndConquer(leftArray);
-    	divideAndConquer(rightArray);
-    	merge(leftArray, rightArray, inputArray);
-    	return inputArray;
-  	}
+``` java
+public int[] divideAndConquer(int[] inputArray) {
+  int n = inputArray.length;
+  if(n == 1) {
+    return inputArray;
+  }
+  int mid = n/2;
+  int[] leftArray = new int[mid];
+  int[] rightArray = new int[n - mid];
+  System.arraycopy(inputArray, 0, leftArray, 0, leftArray.length);
+  System.arraycopy(inputArray, leftArray.length, rightArray, 0, rightArray.length);
+  divideAndConquer(leftArray);
+  divideAndConquer(rightArray);
+  merge(leftArray, rightArray, inputArray);
+  return inputArray;
+}
+```
 
 Next we move forward to merging and sorting the sub-arrays.
 
