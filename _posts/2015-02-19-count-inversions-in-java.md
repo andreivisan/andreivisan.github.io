@@ -5,7 +5,7 @@ published: true
 ---
 
 ### Count inversions definition
-Counting inversions on an array shows how far an array is form being sorted. If the array is sorted then the count is 0. If the array is sorted in reverse order then the count is the maximum.
+Counting inversions on an array shows how far an array is from being sorted. If the array is sorted then the count is 0. If the array is sorted in reverse order then the count is the maximum.
 In real life counting inversions can serve to identify how close the preferences of certain groups of users are and based on that for example create suggestions.
 Counting inversions, like merge sort presented in the previous post, is a Divide and Conquer algorithm.
 
