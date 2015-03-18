@@ -30,6 +30,9 @@ npm install
 ```
 
 You can now run npm start and go to your browser of choice and type http://localhost:3000 and you should see the following:
+
+![Home Page](/public/images/Express_Home_Page.png)
+
 Now let’s stop our app (Ctrl+C in the terminal) and let’s install Elasticsearch plugin for Node. 
 
 ### Elasticsearch plugin setup
@@ -123,6 +126,9 @@ Now let’s modify views/index.ejs to display our search results. The file shoul
 ```
 
 I indexed some houses for sale inside Elasticsearch and the screen looks like the following after I search for a city name:
+
+![Home Page](/public/images/ELASTIC_SEARCH_RESULTS.png)
+
 You can index your own stuff and replace the result properties with the ones appropriate for you.
 I hope this was helpful. Let me know bellow in the comments if there are any questions. 
 You can find the code on GitHub <a href="https://github.com/andreivisan/node_elasticsearch">here</a>.
