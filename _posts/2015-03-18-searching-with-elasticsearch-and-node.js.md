@@ -42,7 +42,7 @@ We can do this by running the following command:
 npm install elasticsearch
 ```
 
-Now we should create a new module for searching. If you use the MEAN stack (learn more about it <a href="http://mean.io/#!/">MEAN.IO</a> or <a href="http://meanjs.org/">MEAN.JS</a>) then there are many ways to organize your folder structure. Since we are not using this stack and we work with plain Node.js I prefer to organize each piece of different functionality in a new module. So let’s create a new folder called search_module in the root folder of the project. Inside it 
+Now we should create a new module for searching. If you use the MEAN stack (if you are interested you can learn more about it on <a href="http://mean.io/#!/">MEAN.IO</a> or <a href="http://meanjs.org/">MEAN.JS</a>) then there are many ways to organize your folder structure. Since we are not using this stack and we work with plain Node.js I prefer to organize each piece of different functionality in a new module. So let’s create a new folder called search_module in the root folder of the project. Inside it 
 let’s create a file called search.js. Bellow the contents of the file:
 
 ``` javascript
@@ -92,7 +92,7 @@ Let’s add the following method inside routes/index.js
 ``` javascript
 router.post('/search-results', function(req, res) {
   searchModule.search(req.body, function(data) {
-    res.render('index', { results: data });
+    res.render('index', { title: 'Express', results: data });
   });
 });
 ```
@@ -124,6 +124,8 @@ Now let’s modify views/index.ejs to display our search results. The file shoul
   </body>
 </html>
 ```
+
+You can now start again the application by running npm start.
 
 I indexed some houses for sale inside Elasticsearch and the screen looks like the following after I search for a city name:
 
