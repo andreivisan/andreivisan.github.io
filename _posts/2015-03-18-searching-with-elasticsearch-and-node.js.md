@@ -80,7 +80,7 @@ module.exports.search = function(searchData, callback) {
 }
 ```
 
-Above I have used bool search query. You can find more about different types of search queries <a href> HERE </a>.
+Above I have used bool search query. You can find more about different types of search queries <a href="http://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html"> HERE </a>.
 The next step is to call this module from the router and display the search results.
 
 ### Put things together
