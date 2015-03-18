@@ -96,7 +96,7 @@ Now let’s modify views/index.ejs to display our search results. The file shoul
       <button type="submit"> SEARCH </button>
     </form>
     <ul>
-      <% if(locals.results) {%>
+      <% if(locals.results) { %>
         <% results.forEach( function( result ) { %>
           <li>
             <%= result._source.title %>
