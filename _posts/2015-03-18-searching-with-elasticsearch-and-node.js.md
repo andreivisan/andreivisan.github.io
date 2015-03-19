@@ -57,19 +57,14 @@ var client = elasticsearch.Client({
 
 module.exports.search = function(searchData, callback) {
   client.search({
-    index: ‘YOUR_INDEX_NAME’,
-    type: 'url',
+    index: 'YOUR_INDEX_NAME',
+    type: 'YOUR_TYPE',
     body: {
       query: {
         bool: {
           must: {
             match: {
-              "description": searchData.housingCityInput
-            }
-          },
-          should: {
-            match: {
-              "url": searchData.housingCityInput
+              "description": searchData.searchTerm
             }
           }
         }
