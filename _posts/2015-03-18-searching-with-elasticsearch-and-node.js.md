@@ -51,7 +51,7 @@ var elasticsearch = require('elasticsearch');
 
 var client = elasticsearch.Client({
   hosts: [
-    ‘YOUR_ELASTICSEARCH_URL’
+    'YOUR_ELASTICSEARCH_URL'
   ]
 });
 
