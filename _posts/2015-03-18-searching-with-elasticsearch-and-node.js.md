@@ -39,7 +39,7 @@ Now let’s stop our app (Ctrl+C in the terminal) and let’s install Elasticsea
 We can do this by running the following command:
 
 ``` bash
-npm install elasticsearch
+npm install --save elasticsearch
 ```
 
 Now we should create a new module for searching. If you use the MEAN stack (if you are interested you can learn more about it on <a href="http://mean.io/#!/">MEAN.IO</a> or <a href="http://meanjs.org/">MEAN.JS</a>) then there are many ways to organize your folder structure. Since we are not using this stack and we work with plain Node.js I prefer to organize each piece of different functionality in a new module. So let’s create a new folder called search_module in the root folder of the project. Inside it 
