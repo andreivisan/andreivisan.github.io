@@ -15,7 +15,7 @@ The sine wave formula is:
 
 The above formula can be explained in sound terms as follows:
 
-<b>y = amplitude x sin ( 2π ( velocity of rotation in cycles per second))</b>
+<b>y = amplitude X sin ( 2π ( velocity of rotation in cycles per second))</b>
 
 Increasing the amplitude of the sine wave, how high the tops and bottoms of the wave go, increases the volume.  Increasing or decreasing the cycle rate, how many cycles over distance/time, increases and decreases the pitch of the sound – how high or low the tone sounds.
 
