@@ -37,15 +37,18 @@ If you plan to participate in coding competitions then mastering algorithms is k
 In conclusion I think a minimal knowledge of algorithm complexity and efficient use of data structures should be enough. I think nowadays you have a plethora of programming languages and most of them serve a good purpose. So being competent with multiple useful programming languages according to your specialization is more important no matter if you are going to work in a corporation or build your own thing. I also think that finding a specialization and getting specialized in a certain domain like web or mobile is more important. You need to be a polyglot but also you need to be specialized in a branch in order to produce quality software.
 Bellow I will list a few good books and courses I have read in regards to algorithms. Please leave a comment if you agree or not with my view and also if you have links to better materials than the ones listed bellow.
 
-Great overall algorithm books:
+##Great overall algorithm books:
+
 <a href="http://www.algorist.com/" target="_blank">Steven Skiena - The Algorithm Design Manual</a>
 
 <a href="http://www.amazon.com/Computer-Programming-Volumes-1-4A-Boxed/dp/0321751043" target="_blank"> Donalt Knuth - The Art Of Computer Programming</a>
 
-Good for job interviews:
+##Good for job interviews:
+
 <a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X" target="_blank">Gayle Laakmann McDowell - Cracking the Coding Interview</a>
 
-Good online courses:
+##Good online courses:
+
 <a href="https://www.coursera.org/course/algo" target="_blank">Stanford: Algorithms design and analysis Part I and II</a>
 
 <a href="https://www.coursera.org/course/algs4partI" target="_blank">Princeton: Algorithms, Part I and II</a>
