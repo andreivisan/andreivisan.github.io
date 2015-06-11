@@ -39,6 +39,7 @@ Bellow I will list a few good books and courses I have read in regards to algori
 
 Great overall algorithm books:
 <a href="http://www.algorist.com/" target="_blank">Steven Skiena - The Algorithm Design Manual</a>
+
 <a href="http://www.amazon.com/Computer-Programming-Volumes-1-4A-Boxed/dp/0321751043" target="_blank"> Donalt Knuth - The Art Of Computer Programming</a>
 
 Good for job interviews:
@@ -46,4 +47,5 @@ Good for job interviews:
 
 Good online courses:
 <a href="https://www.coursera.org/course/algo" target="_blank">Stanford: Algorithms design and analysis Part I and II</a>
+
 <a href="https://www.coursera.org/course/algs4partI" target="_blank">Princeton: Algorithms, Part I and II</a>
