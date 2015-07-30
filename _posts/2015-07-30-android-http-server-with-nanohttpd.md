@@ -8,7 +8,7 @@ published: true
 In this post I will show you how to create a http server inside your Android application. You might ask yourself why would you ever create a web server inside your Android app which in most cases should serve as a client and not as a server. Well, one use case that I have encountered would be the one where we have used a robot arm to test our payment application together with a payment terminal. In this case the robot arm would operate on the terminal and would also send REST calls to the application to send and receive data. This would be one case, I can imagine there could be many other applications of creating a http server inside your Android application.
 
 ###The start
-First let’s create a new Android project. I will use Gradle to build it but there are no dependencies. We could use nanoHTTPD as a JAR file but the whole idea behind it is that it is very light so the only thing we need to do is to copy and paste the class NanoHTTPD.java found in the /core folder in the GitHub repository. You can find the NanoHTTPD repository <a href=“https://github.com/NanoHttpd/nanohttpd”> here </a>.
+First let’s create a new Android project. I will use Gradle to build it but there are no dependencies. We could use nanoHTTPD as a JAR file but the whole idea behind it is that it is very light so the only thing we need to do is to copy and paste the class NanoHTTPD.java found in the /core folder in the GitHub repository. You can find the NanoHTTPD repository <a href="https://github.com/NanoHttpd/nanohttpd" target="_blank"> here </a>.
 
 ###Create the server
 In the /src/main/java/your_package_name folder let’s create a package called <b>server</b>. Inside this package let’s create a class called MyServer.java. Also copy and paste NanoHTTPD.java from GitHub to this folder. Use the code bellow in order to create it.
@@ -86,4 +86,4 @@ We serve /HELLO_WORLD !
 In order to find your phone or tablet ip go to WiFi Setting and then to Advanced and there you should find the ip.
 If you run on your emulator then open a browser window inside the emulator and type: http://localhost:8080/HELLO_WORLD and you should see the same as above.
 
-You can find all the full project on GitHub <a href=“https://github.com/andreivisan/AndroidHttpServer”> here. </a>
+You can find all the full project on GitHub <a href="https://github.com/andreivisan/AndroidHttpServer" target="_blank"> here. </a>
