@@ -14,7 +14,27 @@ First let’s create a new Android project. I will use Gradle to build it but th
 In the /src/main/java/your_package_name folder let’s create a package called <b>server</b>. Inside this package let’s create a class called MyServer.java. Also copy and paste NanoHTTPD.java from GitHub to this folder. Use the code bellow in order to create it.
 
 ```java
-import java.io.IOException;  /**  * Created by andrei on 7/30/15.  */ public class MyServer extends NanoHTTPD {     private final static int PORT = 8080;      public MyServer() throws IOException {         super(PORT);         start();         System.out.println( "\nRunning! Point your browers to http://localhost:8080/ \n" );     }      @Override     public Response serve(IHTTPSession session) {         String msg = "<html><body><h1>Hello server</h1>\n";         msg += "<p>We serve " + session.getUri() + " !</p>";         return newFixedLengthResponse( msg + "</body></html>\n" );     } }
+import java.io.IOException;
+
+/**
+ * Created by andrei on 7/30/15.
+ */
+public class MyServer extends NanoHTTPD {
+    private final static int PORT = 8080;
+
+    public MyServer() throws IOException {
+        super(PORT);
+        start();
+        System.out.println( "\nRunning! Point your browers to http://localhost:8080/ \n" );
+    }
+
+    @Override
+    public Response serve(IHTTPSession session) {
+        String msg = "<html><body><h1>Hello server</h1>\n";
+        msg += "<p>We serve " + session.getUri() + " !</p>";
+        return newFixedLengthResponse( msg + "</body></html>\n" );
+    }
+}
 ```
 
 Now that we have the server created let’s modify MainActivity.java. First let’s add a global variable.
@@ -26,12 +46,26 @@ private MyServer server;
 Next we will add the following code to the onResume() method.
 
 ```java
-@Override public void onResume() {     super.onResume();     try {         server = new MyServer();     } catch (IOException e) {         e.printStackTrace();     } }
+@Override
+public void onResume() {
+    super.onResume();
+    try {
+        server = new MyServer();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
 ```
 I suggest you also close the server on the onPause() method. For the purpose of this demo I will not use it but please find bellow the implementation of the onPause() method.
 
 ```java
-@Override public void onPause() {     super.onPause();     if(server != null) {         server.stop();     } }
+@Override
+public void onPause() {
+    super.onPause();
+    if(server != null) {
+        server.stop();
+    }
+}
 ```
 
 Before running the app make sure that inside your AndroidManifest.xml you have the following permissions:
@@ -47,7 +81,7 @@ After all the changes have been made we can run this demo. If you run the demo o
 HELLO SERVER
 
 We serve /HELLO_WORLD !
-<b>
+</b>
 
 In order to find your phone or tablet ip go to WiFi Setting and then to Advanced and there you should find the ip.
 If you run on your emulator then open a browser window inside the emulator and type: http://localhost:8080/HELLO_WORLD and you should see the same as above.
