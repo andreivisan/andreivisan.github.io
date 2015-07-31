@@ -14,7 +14,6 @@ sass:
   
 gems:
   - jekyll-redirect-from #https://help.github.com/articles/redirects-on-github-pages
-  - jekyll-mentions
   
 social:
   email: mailto:andrei.m.visan@gmail.com
