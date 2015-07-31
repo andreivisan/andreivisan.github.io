@@ -16,9 +16,6 @@ In the /src/main/java/your_package_name folder let’s create a package called <
 ```java
 import java.io.IOException;
 
-/**
- * Created by andrei on 7/30/15.
- */
 public class MyServer extends NanoHTTPD {
     private final static int PORT = 8080;
 
