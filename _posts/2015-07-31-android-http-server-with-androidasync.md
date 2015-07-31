@@ -8,6 +8,8 @@ Yesterday, in a previous post, I wrote about how to write an HTTP server inside 
 
 After reading a bit about <a href="https://github.com/koush/AndroidAsync" target="_blank">AndroidAsync</a> I found out that the code is much better than the one for <a href="https://github.com/NanoHttpd/nanohttpd" target="_blank"> NanoHTTPD </a> as well as the way of handling requests is more clear from the code reading perspective.
 
+One of the main difference between the two is that NanoHTTPD is using threads while AndroidAsync is based on NIO. I can't tell you which one is better in terms of speed as I didn't test this yet, but I will let you know as soon as I have more data on both.
+
 ###Let’s start coding
 Before starting the exciting coding make sure you add the following code to your AndroidManifest.xml file:
 
