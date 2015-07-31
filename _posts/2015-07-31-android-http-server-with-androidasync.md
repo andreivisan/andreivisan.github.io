@@ -86,6 +86,8 @@ Now start the application and after go to your device’s browser or to your emu
 Hello!!!
 </b>
 
+I assume the code above is pretty self explanatory and it doesn't need too much description. But what I did was to add a new AsyncHttpServer and handled a GET request to which we respond with the String "Hello!!!". Also we made our server to listen on port 8080. You can choose any port you want.
+
 I suggest you create a separate class that handles all the server methods. In this case I have added it in the MainActivity.java for convenience purposes.
 In order to stop the server you have to call the following methods:
 
