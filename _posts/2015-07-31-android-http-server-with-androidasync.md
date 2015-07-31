@@ -4,9 +4,9 @@ title: ANDROID HTTP SERVER WITH ANDROIDASYNC
 published: true
 ---
 
-Yesterday, in a previous post, I wrote about how to write an HTTP server inside your Android application using <a href="https://github.com/NanoHttpd/nanohttpd"> NanoHTTPD </a>. After a bit more research I found that <a href="https://popcorntime.io/"> Popcorntime </a> for Android were using NanoHTTPD as well and that they have replace it with another library called <a href="https://github.com/koush/AndroidAsync">AndroidAsync</a>.
+Yesterday, in a previous post, I wrote about how to write an HTTP server inside your Android application using <a href="https://github.com/NanoHttpd/nanohttpd" target="_blank"> NanoHTTPD </a>. After a bit more research I found that <a href="https://popcorntime.io/" target="_blank"> Popcorntime </a> for Android were using NanoHTTPD as well and that they have replace it with another library called <a href="https://github.com/koush/AndroidAsync" target="_blank">AndroidAsync</a>.
 
-After reading a bit about <a href="https://github.com/koush/AndroidAsync">AndroidAsync</a> I found out that the code is much better than the one for <a href="https://github.com/NanoHttpd/nanohttpd"> NanoHTTPD </a> as well as the way of handling requests is more clear from the code reading perspective.
+After reading a bit about <a href="https://github.com/koush/AndroidAsync" target="_blank">AndroidAsync</a> I found out that the code is much better than the one for <a href="https://github.com/NanoHttpd/nanohttpd" target="_blank"> NanoHTTPD </a> as well as the way of handling requests is more clear from the code reading perspective.
 
 ###Let’s start coding
 Before starting the exciting coding make sure you add the following code to your AndroidManifest.xml file:
@@ -16,7 +16,7 @@ Before starting the exciting coding make sure you add the following code to your
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 ```
 
-For this project I also used Gradle. So in order to add <a href="https://github.com/koush/AndroidAsync">AndroidAsync</a> to your project add the following line to your build.gradle file:
+For this project I also used Gradle. So in order to add <a href="https://github.com/koush/AndroidAsync" target="_blank">AndroidAsync</a> to your project add the following line to your build.gradle file:
 
 ```java
 compile 'com.koushikdutta.async:androidasync:2.+'
@@ -94,5 +94,5 @@ server.stop();
 mAsyncServer.stop();
 ```
 
-That’s about it. If you need further examples using <a href="https://github.com/NanoHttpd/nanohttpd"> NanoHTTPD </a> or <a href="https://github.com/koush/AndroidAsync">AndroidAsync</a> please let me know in the comments bellow and will come with more in detail examples.
+That’s about it. If you need further examples using <a href="https://github.com/NanoHttpd/nanohttpd" target="_blank"> NanoHTTPD </a> or <a href="https://github.com/koush/AndroidAsync" target="_blank">AndroidAsync</a> please let me know in the comments bellow and will come with more in detail examples.
 You can find the full project on GitHub <a href="https://github.com/andreivisan/AndroidAsyncHttpServer" target="_blank"> here. </a>
