@@ -83,4 +83,8 @@ We serve /HELLO_WORLD !
 In order to find your phone or tablet ip go to WiFi Setting and then to Advanced and there you should find the ip.
 If you run on your emulator then open a browser window inside the emulator and type: http://localhost:8080/HELLO_WORLD and you should see the same as above.
 
+So, now our server will respond to any call of the the device IP and the 8080 port. You can use any URI which then you can parse and transform our small server into a full fledged REST server.
+IHTTPSession handles one session, i.e. parses the HTTP request and returns the response.
+You can also get the list of parameters by using session.getParms(). This will return a Map<String, String> with all the request parameters. 
+
 You can find the full project on GitHub <a href="https://github.com/andreivisan/AndroidHttpServer" target="_blank"> here. </a>
