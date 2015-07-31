@@ -83,4 +83,4 @@ We serve /HELLO_WORLD !
 In order to find your phone or tablet ip go to WiFi Setting and then to Advanced and there you should find the ip.
 If you run on your emulator then open a browser window inside the emulator and type: http://localhost:8080/HELLO_WORLD and you should see the same as above.
 
-You can find all the full project on GitHub <a href="https://github.com/andreivisan/AndroidHttpServer" target="_blank"> here. </a>
+You can find the full project on GitHub <a href="https://github.com/andreivisan/AndroidHttpServer" target="_blank"> here. </a>
