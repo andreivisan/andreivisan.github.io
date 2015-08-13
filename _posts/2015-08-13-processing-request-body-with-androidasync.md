@@ -33,11 +33,13 @@ Let’s add the following piece of code to the startServer() method that we crea
 ```java
 server.post("/testJson", new HttpServerRequestCallback() {
     @Override
-    public void onRequest(AsyncHttpServerRequest asyncHttpServerRequest, AsyncHttpServerResponse asyncHttpServerResponse) {
+    public void onRequest(AsyncHttpServerRequest asyncHttpServerRequest, 
+                          AsyncHttpServerResponse asyncHttpServerResponse) {
         AsyncHttpRequestBody requestBody = asyncHttpServerRequest.getBody();
         try {
             asyncHttpServerResponse.code(200);
-            asyncHttpServerResponse.send(new JSONObject(requestBody.toString()).getJSONObject("menu").getString("value"));
+            asyncHttpServerResponse.send(
+                new JSONObject(requestBody.toString()).getJSONObject("menu").getString("value"));
         } catch (JSONException e) {
             Log.e("MainActivity", e.getMessage(), e);
         }
@@ -48,5 +50,7 @@ Now go open your browser, enter the REST client and type in: your.tablet.ip:8080
 
 ###The Explanation
 A question that may come up from the code above is why the JSON transformation? Well, JSON is a format that is very easy to work with and I find it very practical to work with JSON objects. On the other hand the method above is performant and makes sense only if you know for sure that you will receive JSON format on you request object. If not use the parsing methods in the <b> AsyncHttpRequestBody </b> class.
+
 Please let me know if there is any other part of the AndroidAsync that you want me to cover in a future post.
+
 You can also find the complete code <a href="https://github.com/andreivisan/AndroidAsyncHttpServer" target="_blank"> here </a>.
