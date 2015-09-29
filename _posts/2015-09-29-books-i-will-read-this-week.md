@@ -14,7 +14,7 @@ This week list is:
 
 ![Total Recall: My Unbelievably True Life Story](/public/images/total_recall.jpg)
 
-This book is an autobiography of Arnold Schwarzenegger and was published in November 2013. Weather you are or not a fan of Arnold I consider this book a must read for any person that wants not only to be a goal setter but also to accomplish his/her goals. Arnold is one of the few people who managed to set high goals and accomplish every one of them.
+This book is an autobiography of Arnold Schwarzenegger and was published in November 2013. Whether you are or not a fan of Arnold I consider this book a must read for any person that wants not only to be a goal setter but also to accomplish his/her goals. Arnold is one of the few people who managed to set high goals and accomplish every one of them.
 
 ### I Will Teach You To Be Rich by Ramit Sethi
 
