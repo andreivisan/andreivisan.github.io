@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BOOKS I WILL READ THIS WEEK
-published: false
+published: true
 ---
 
 I decided that I will start making a new serie of blog posts called <b>Books I Will Read This Week</b>.
@@ -20,3 +20,12 @@ This book is an autobiography of Arnold Schwarzenegger and was published in Nove
 
 ![I Will Teach You To Be Rich](/public/images/i_will_teach_you_to_be_rich.jpg)
 
+This book is for everyone who struggles with their personal finances or just wants to find easier and better ways to invest their money.
+
+### Gradle For Android
+
+![Gradle For Android](/public/images/gradle_for_android.jpg)
+
+This book teaches you how to proper configure Gradle for Android specific tasks and how to automate builds for any Android app.
+
+Next week I will publish a new list of books as well as my opinion and reviews on each of the books above.
