@@ -111,13 +111,38 @@ public class ProductList {
     }
 
     public List<Product> initializeProductListData(Context context) {
-        products.add(new Product("Total Recall: My Unbelievably True Life Story", context.getString(R.string.total_recall_description), 13.34, R.drawable.totalrecall));
-        products.add(new Product("Clean Code: A Handbook of Agile Software Craftsmanship", context.getString(R.string.clean_code_description), 34.52, R.drawable.cleancode));
-        products.add(new Product("The Pursuit of Happyness", context.getString(R.string.tph_description), 11.25, R.drawable.thepursuitofhappyness));
-        products.add(new Product("Ghost in the Wires: My Adventures as the World's Most Wanted Hacker", context.getString(R.string.giw_description), 11.77, R.drawable.ghostinthewires));
-        products.add(new Product("Steve Jobs", context.getString(R.string.steve_jobs_description), 20.77, R.drawable.stevejobs));
-        products.add(new Product("Minecraft: The Unlikely Tale of Markus 'Notch' Persson and the Game That Changed Everything", context.getString(R.string.minecraft_description), 17.34, R.drawable.minecraft));
-        products.add(new Product("The Wolf of Wall Street", context.getString(R.string.wws_description), 8.97, R.drawable.wolfofwallstreet));
+        products.add(
+        new Product("Total Recall: My Unbelievably True Life Story", 
+        context.getString(R.string.total_recall_description), 
+        13.34, 
+        R.drawable.totalrecall));
+        products.add(
+        new Product("Clean Code: A Handbook of Agile Software Craftsmanship",                  context.getString(R.string.clean_code_description), 
+        34.52, 
+        R.drawable.cleancode));
+        products.add(
+        new Product("The Pursuit of Happyness", 
+        context.getString(R.string.tph_description), 
+        11.25, 
+        R.drawable.thepursuitofhappyness));
+        products.add(
+        new Product("Ghost in the Wires: My Adventures as the World's Most Wanted Hacker", context.getString(R.string.giw_description), 
+        11.77, 
+        R.drawable.ghostinthewires));
+        products.add(
+        new Product("Steve Jobs", 
+        context.getString(R.string.steve_jobs_description), 
+        20.77, 
+        R.drawable.stevejobs));
+        products.add(
+        new Product("Minecraft: The Unlikely Tale of Markus 'Notch' Persson and the Game That Changed Everything", context.getString(R.string.minecraft_description), 
+        17.34, 
+        R.drawable.minecraft));
+        products.add(
+        new Product("The Wolf of Wall Street", 
+        context.getString(R.string.wws_description), 
+        8.97, 
+        R.drawable.wolfofwallstreet));
         return products;
     }
 }
