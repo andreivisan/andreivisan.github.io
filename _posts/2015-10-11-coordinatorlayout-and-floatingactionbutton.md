@@ -117,7 +117,8 @@ public class ProductList {
         13.34, 
         R.drawable.totalrecall));
         products.add(
-        new Product("Clean Code: A Handbook of Agile Software Craftsmanship",                  context.getString(R.string.clean_code_description), 
+        new Product("Clean Code: A Handbook of Agile Software Craftsmanship",
+        context.getString(R.string.clean_code_description), 
         34.52, 
         R.drawable.cleancode));
         products.add(
@@ -126,7 +127,8 @@ public class ProductList {
         11.25, 
         R.drawable.thepursuitofhappyness));
         products.add(
-        new Product("Ghost in the Wires: My Adventures as the World's Most Wanted Hacker", context.getString(R.string.giw_description), 
+        new Product("Ghost in the Wires: My Adventures as the World's Most Wanted Hacker",
+        context.getString(R.string.giw_description), 
         11.77, 
         R.drawable.ghostinthewires));
         products.add(
@@ -135,7 +137,8 @@ public class ProductList {
         20.77, 
         R.drawable.stevejobs));
         products.add(
-        new Product("Minecraft: The Unlikely Tale of Markus 'Notch' Persson and the Game That Changed Everything", context.getString(R.string.minecraft_description), 
+        new Product("Minecraft: The Unlikely Tale of Markus 'Notch' Persson and the Game That Changed Everything",
+        context.getString(R.string.minecraft_description), 
         17.34, 
         R.drawable.minecraft));
         products.add(
