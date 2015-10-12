@@ -34,7 +34,7 @@ dependencies {
 }
 ```
 
-As you can see above, besides adding the design support library I have also added 2 other libraries - the CardView and the RecyclerView. These 2 are used to obtain the list of cards like the image above shows. We will use RecyclerView instead of the regular ListView as ListView is not sending scrolling callbacks to the CoordinatorLayout which are needed for interaction between the parent layout and the underlying views.
+As you can see above, besides adding the design support library I also added 2 other libraries - the CardView and the RecyclerView. These 2 are used to obtain the list of cards like the image above shows. We will use RecyclerView instead of the regular ListView as ListView is not sending scrolling callbacks to the CoordinatorLayout which are needed for interaction between the parent layout and the underlying views.
 Next step is to get data to fill the list. For this I created the Product model which holds the name, description, price and photo id. 
 
 ```java
