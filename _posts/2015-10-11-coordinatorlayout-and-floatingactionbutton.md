@@ -6,7 +6,7 @@ published: true
 
 ### Introduction
 
-Together with material design Google also lunched a new Android Design Support Library to help developers use material design and it works for API level 7 and higher.
+Together with material design, Google also launched a new Android Design Support Library to help developers use material design and it works for API level 7 and higher.
 One of the most important helpers in the new library is a super-powered FrameLayout called CoordinatorLayout.
 The most important feature that CoordinatorLayout brings to the table is the possibility of views to interact within a single parent as well as with one another. As the Google documentation states:
 
