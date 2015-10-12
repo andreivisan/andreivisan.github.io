@@ -86,7 +86,7 @@ public class Product {
 }
 ```
  
-Next I created the dataset object that will be used to create a list of products and fill this list with data. If you have a database or a REST server that serves you the data use those instead of the class bellow. 
+Next I created a dataset object that will be used to create a list of products and fill this list with data. If you have a database or a REST server that serves you the data use those instead of the class bellow. 
 
 ```java
 public class ProductList {
