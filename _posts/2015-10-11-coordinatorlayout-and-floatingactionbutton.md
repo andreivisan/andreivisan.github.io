@@ -21,7 +21,7 @@ The end goal is to have a list of books looking more or less like the one bellow
 
 ![Book Store](/public/images/androidfab.png)
 
-Using Android Studio and Gradle let’s create a simple project containing a blank main view.
+Using Android Studio and Gradle create a simple project containing a blank main view.
 First let’s add the design library and other support libraries to our build.gradle file.
 
 ```groovy
