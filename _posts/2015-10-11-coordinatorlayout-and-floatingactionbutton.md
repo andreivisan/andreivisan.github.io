@@ -180,8 +180,8 @@ Now that we have the data in place and ready to be added to our view let’s sta
 </android.support.design.widget.CoordinatorLayout>
 ```
 
-As you can see above we have used the CoordinatorLayout as the main layout and we placed inside the RecyclerView which will hold the list of cards representing the list of books as well as the FAB(Floating Action Button). 
-Next we will create the item view representing each card in the list of books. For this we need to create a new xml view that I called item.xml.
+As you can see above we have used the CoordinatorLayout as the main layout in which I placed the RecyclerView which will hold the list of cards representing the list of books as well as the FAB(Floating Action Button). 
+Next we will create the item view representing each card in the list of books. For this we need to create a new xml view which I called item.xml.
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -289,7 +289,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 To be noted from the code above is that for the RecyclerView we need to add a layout manager and the adapter which contains the list of books.
-Next let’s code the the products adapter which will add the items to our list. For this we create a new class called ProductsAdapter.java .
+Next let’s code the products adapter which will add the items to our list. For this we create a new class called ProductsAdapter.java .
 
 ```java
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.BooksViewHolder> {
@@ -347,5 +347,5 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.BooksV
 ```
 
 In the code above I implemented the ViewHolder pattern in order to minimize the calls to findViewById which is a very costly call. After instantiating each view in the ViewHolder we add the data from the data set on the onBingViewHolder method.
-Now if you run your app you should see a list of books and a FAB on top of it. In the next blog post we will ad some behavior to the FAB and to the AppBar on top.
+Now if you run your app you should see a list of books and a FAB on top of it. In the next blog post we will add some behavior to the FAB and to the AppBar on top.
 You can also follow the progress of this app on GitHub <a href="https://github.com/andreivisan/AndroidPayDemo"> here </a>.
