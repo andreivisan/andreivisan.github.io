@@ -11,8 +11,9 @@ of the Design Support library that Google released for Android.
 In this blog post I will introduce a very important, yet not talked much about, feature that will make your apps look more snappy.
 The feature that I will detail in this post is the <b> custom behavior </b>, and I have used the example from the <a href="http://programminglife.io/coordinatorlayout-and-floatingactionbutton/" target="_blank"> previous post </a>
 by implementing a full functioning shopping cart.
-The Design Support library also comes with pre defined behaviors like for example <b>string/appbar_scrolling_view_behavior</b>. We will not cover
-these in this post as they are already covered by Google in <a href="https://developer.android.com/intl/zh-cn/reference/android/support/design/widget/AppBarLayout.html" target="_blank"> their documentation </a>.
+The Design Support library also comes with pre defined behaviors like for example. We will not cover
+these in this post as they are already covered by Google in 
+<a href="https://developer.android.com/intl/zh-cn/reference/android/support/design/widget/AppBarLayout.html" target="_blank"> their documentation </a>.
 Bellow I will describe how we can build custom behavior for our FAB(Floating Action Button). What I wanted to achieve is that our FAB zooms every time an item is added to the cart.
 
 ### The code
