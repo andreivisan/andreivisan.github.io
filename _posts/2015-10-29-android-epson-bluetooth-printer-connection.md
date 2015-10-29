@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ANDROID EPSON PRINTER CONNECTION
-published: false
+published: true
 ---
 
 ### Introduction
@@ -229,7 +229,7 @@ private void sendDataToPrinter() {
 }
 ```
 
-Again, all we did here was just to call the methods we have implement in the triver and send the correct byte arrays to the printer.
+Again, all we did here was just to call the methods we have implement in the driver and send the correct byte arrays to the printer.
 The only thing left to implement is to close the connection to the printer. For this we have another button, with an unfortunate name (I developed it in a hurry), Close printer, that will close the connection to the selected printer.
 
 ```java
