@@ -6,7 +6,7 @@ published: false
 
 ### Introduction
 
-In this post I will cover the steps to connect to any type of Bluetooth printer that is based on ESC/POS (Epson) protocol. 
+In this post I will cover the steps to connect to any type of Bluetooth printer that is based on the ESC/POS (Epson) protocol. 
 In the end we will have an app looking like the image bellow, that lists all the paired devices via the Bluetooth menu in the Settings.
 
 ![Bluetooth printer app](/public/images/bt_printer.png)
@@ -230,7 +230,7 @@ private void sendDataToPrinter() {
 ```
 
 Again, all we did here was just to call the methods we have implement in the triver and send the correct byte arrays to the printer.
-The only thing left to impement is to close the connection to the printer. For this we have another button, with an unfortunate name (I developed it in a hurry), Close printer, that will close the connection to the selected printer.
+The only thing left to implement is to close the connection to the printer. For this we have another button, with an unfortunate name (I developed it in a hurry), Close printer, that will close the connection to the selected printer.
 
 ```java
 mClosePrinter.setOnClickListener(new View.OnClickListener() {
