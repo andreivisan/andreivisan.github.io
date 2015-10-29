@@ -111,7 +111,7 @@ mRecyclerView.addOnItemTouchListener(
         })
 );
         
-//..........
+//.......
 
 private void openBtConnection() {
     try {
@@ -188,4 +188,72 @@ private void beginListenForData() {
 ```
 
 As you can see in the code above all we did was to open a basic socket connection from the app to the Bluetooth printer.
-Now we are ready to start printing so let's implement 
+Now we are ready to start printing so let's implement the Test Printer action.
+
+``` java
+mTestPrinter.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        sendDataToPrinter();
+    }
+});
+
+//.......
+
+private void sendDataToPrinter() {
+    try {
+        ESCPOSDriver escposDriver = new ESCPOSDriver();
+
+        String msgLeft = "Left";
+        msgLeft += "\n";
+        String msgCenter = "Center";
+        msgCenter += "\n";
+        String msgRight = "Right";
+        msgRight += "\n";
+
+        //Initialize
+        escposDriver.initPrint(mOutputStream);
+
+        escposDriver.printLineAlignLeft(mOutputStream, msgLeft);
+        escposDriver.printLineAlignCenter(mOutputStream, msgCenter);
+        escposDriver.printLineAlignRight(mOutputStream, msgRight);
+
+        escposDriver.flushCommand(mOutputStream);
+
+        mOutputStream.flush();
+
+        Snackbar.make(mCoordinatorLayout, "Data sent", Snackbar.LENGTH_SHORT).show();
+    } catch (Exception e) {
+        Log.e(tag, e.getMessage(), e);
+    }
+}
+```
+
+Again, all we did here was just to call the methods we have implement in the triver and send the correct byte arrays to the printer.
+The only thing left to impement is to close the connection to the printer. For this we have another button, with an unfortunate name (I developed it in a hurry), Close printer, that will close the connection to the selected printer.
+
+```java
+mClosePrinter.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        closeBT();
+    }
+});
+
+//.......
+
+void closeBT() {
+    try {
+        stopWorker = true;
+        mOutputStream.close();
+        mInputStream.close();
+        mSocket.close();
+
+        Snackbar.make(mCoordinatorLayout, "Bluetooth closed", Snackbar.LENGTH_SHORT).show();
+    } catch (Exception e) {
+        Log.e(tag, e.getMessage(), e);
+    }
+}
+```
+
+Again, all the code to develop the complete app can be found on <a href="https://github.com/andreivisan/BluetoothPrinter" target="_blank"> my Github repository </a>. Please let me know in the comments section bellow if you have any questions.
