@@ -96,3 +96,96 @@ public class ESCPOSDriver {
 
 }
 ```
+The code is pretty self explanatory so we can move on to the next step.
+Next I created a RecyclerView and an adapter as shown in a <a href="http://programminglife.io/coordinatorlayout-and-floatingactionbutton/" target="_blank"> previous post </a>. I will not go into UI details as you can find all the code on <a href="https://github.com/andreivisan/BluetoothPrinter" target="_blank"> my Github repository </a>.
+Next I added the action that triggers the app to connect to the printer.
+
+```java
+mRecyclerView.addOnItemTouchListener(
+        new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                mDevice = mPairedDevices.get(position);
+                openBtConnection();
+            }
+        })
+);
+        
+//..........
+
+private void openBtConnection() {
+    try {
+        // Standard SerialPortService ID
+        UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+        mSocket = mDevice.createRfcommSocketToServiceRecord(uuid);
+        mSocket.connect();
+        OutputStream outputStream = mSocket.getOutputStream();
+        mOutputStream = new BufferedOutputStream(outputStream);
+        mInputStream = mSocket.getInputStream();
+
+        beginListenForData();
+
+        Snackbar.make(mCoordinatorLayout, "Bluetooth connection opened", Snackbar.LENGTH_SHORT).show();
+    } catch (Exception e) {
+        Log.e(tag, e.getMessage(), e);
+    }
+}
+
+private void beginListenForData() {
+    try {
+        final Handler handler = new Handler();
+
+        // This is the ASCII code for a newline character
+        final byte delimiter = 10;
+
+        stopWorker = false;
+        readBufferPosition = 0;
+        readBuffer = new byte[1024];
+
+        mWorkerThread = new Thread(new Runnable() {
+            public void run() {
+                while (!Thread.currentThread().isInterrupted() && !stopWorker) {
+                    try {
+                        int bytesAvailable = mInputStream.available();
+                        if (bytesAvailable > 0) {
+                            byte[] packetBytes = new byte[bytesAvailable];
+                            mInputStream.read(packetBytes);
+                            for (int i = 0; i < bytesAvailable; i++) {
+                                byte readByte = packetBytes[i];
+                                if (readByte == delimiter) {
+                                    byte[] encodedBytes = new byte[readBufferPosition];
+                                    System.arraycopy(readBuffer, 0,
+                                                     encodedBytes, 0,
+                                                     encodedBytes.length);
+                                    final String data = new String(encodedBytes, 
+                                                                   "US-ASCII");
+                                    readBufferPosition = 0;
+                                    handler.post(new Runnable() {
+                                        public void run() {
+                                            Snackbar.make(
+                                                mCoordinatorLayout, 
+                                                "Printer is ready", 
+                                                Snackbar.LENGTH_SHORT
+                                            ).show();
+                                        }
+                                    });
+                                } else {
+                                    readBuffer[readBufferPosition++] = readByte;
+                                }
+                            }
+                        }
+                    } catch (IOException ex) {
+                        stopWorker = true;
+                    }
+                }
+            }
+        });
+        mWorkerThread.start();
+    } catch (Exception e) {
+        Log.e(tag, e.getMessage(), e);
+    }
+}
+```
+
+As you can see in the code above all we did was to open a basic socket connection from the app to the Bluetooth printer.
+Now we are ready to start printing so let's implement 
