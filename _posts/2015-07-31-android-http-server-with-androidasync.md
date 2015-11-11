@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ANDROID HTTP SERVER WITH ANDROIDASYNC
+title: Android HTTP server with AndroidAsync
 published: true
 ---
 
