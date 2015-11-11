@@ -1,6 +1,6 @@
 ---
 layout: post
-title: COORDINATORLAYOUT AND FLOATING ACTION BUTTON
+title: Coordinator Layout and Floating Action Button
 published: true
 ---
 
