@@ -1,6 +1,6 @@
 ---
 layout: post
-title: COORDINATORLAYOUT AND FLOATING ACTION BUTTON PART 2 - CUSTOM BEHAVIOR
+title: Coordinator Layout and Floating Action Button Part 2 - Custom Behavior
 published: true
 ---
 
