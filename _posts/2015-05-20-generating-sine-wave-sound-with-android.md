@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GENERATING SINE WAVE SOUND WITH ANDROID
+title: Generating sine wave sound with Android
 published: true
 ---
 
