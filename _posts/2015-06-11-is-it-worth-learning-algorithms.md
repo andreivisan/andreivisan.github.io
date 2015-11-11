@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IS IT WORTH LEARNING ALGORITHMS?
+title: Is it worth learning algorithms?
 published: true
 ---
 
