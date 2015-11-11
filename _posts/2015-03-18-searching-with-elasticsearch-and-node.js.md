@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SEARCHING WITH ELASTICSEARCH AND NODE.JS
+title: Searching with Elasticsearch and Node.js
 published: true
 ---
 
