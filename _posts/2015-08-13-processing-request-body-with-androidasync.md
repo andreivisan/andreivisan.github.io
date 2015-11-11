@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PROCESSING REQUEST BODY WITH ANDROIDASYNC
+title: Processing request body with AndroidAsync
 published: true
 ---
 
