@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ANDROID EPSON PRINTER CONNECTION
+title: Android EPSON printer connection
 published: true
 ---
 
