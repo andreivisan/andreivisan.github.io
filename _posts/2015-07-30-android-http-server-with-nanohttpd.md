@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ANDROID HTTP SERVER WITH NANOHTTPD
+title: Android HTTP server with NanoHTTPD
 published: true
 ---
 
