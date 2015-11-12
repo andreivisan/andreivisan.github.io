@@ -33,12 +33,17 @@ try {
 
 Let's analyze the code above. What we do is to create a RequestFuture and we pass it as parameter to our JsonObjectRequest which then we add to the request queue.
 Then the interesting part comes along. In order to get the response JSON object from our request we call the get() method on the future we declared above. We also set a timeout of let's say 10 seconds so we don't block the UI indefinitely in case our request times out.
-But here's the catch - we can't call ``` java future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) ``` on the main thread (the UI thread) as it is a blocking operation and it will result in a TimeoutException. So in order to solve this issue we need to call future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) in an AsyncTask
+But here's the catch - we can't call ``` future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) ``` on the main thread (the UI thread) as it is a blocking operation and it will result in a TimeoutException. So in order to solve this issue we need to call ``` future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) ``` in an AsyncTask, which is not something that we want.
 
 ### The code
 
+One solution I came up with was to create a callback that I will pass to the method that has the call to JsonObjectRequest so that when we call this method we can use this callback to get the request value and process it further.
 
-### The Code
+Let's start by creating a new Android project and add the following lines to the AndroidManifest.xml file:
+
+``` xml
+
+```
 
 
 ### Conclusion
