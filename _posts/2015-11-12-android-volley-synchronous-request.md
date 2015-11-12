@@ -155,7 +155,7 @@ public void useData() {
 
 ### Conclusion
 
-As awesome as Volley can be it still lacks in working with Futures and it's hard to use for synchronous work. The only advantage that Volley has is that it comes from Google and a lot of companies where security is the first priority choose to use it. If that is not an issue for you I recommend <a href="https://github.com/koush/ion" target="_blank"> ion </a> which is a much better library to help you with HTTP calls.
+As awesome as Volley can be it still lacks in working with Futures and it's hard to use for synchronous work. The only advantage that Volley has is that it comes from Google and a lot of companies where security is the first priority choose to use it. If that is not an issue for you I recommend <a href="https://github.com/koush/ion" target="_blank">ion</a> which is a much better library to help you with HTTP calls.
 If you have any questions or you need further clarification and/or help please don't hesitate to comment bellow.
 
 
