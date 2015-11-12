@@ -136,8 +136,26 @@ public interface DataCallback {
 }
 ```
 
-Now let's call the 
+Now let's call fetchData and use the respose that comes from the webservice:
+
+```java
+public void useData() {
+    fetchData(new DataCallback() {
+        @Override
+        public void onSuccess(JSONObject result) {
+            try {
+                data = result.getString("data");
+            } catch (JSONException e) {
+                Log.e(tag, e.getMessage(), e);
+            }
+        }
+    });
+}
+```
 
 ### Conclusion
+
+As awesome as Volley can be it still lacks in working with Futures and it's hard to use it for synchronous work. The only advantage that Volley has is that it comes from Google and a lot of companies where security is the first priority choose to use it. If that is not an issue for you I recommend <a hfref="https://github.com/koush/ion"> ion </a> which is a much better library to help you with HTTP calls.
+If you have any questions or you need further clarification and/or help please don't hesitate to comment bellow.
 
 
