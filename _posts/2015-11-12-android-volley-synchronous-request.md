@@ -37,7 +37,7 @@ But here's the catch - we can't call ``` future.get(REQUEST_TIMEOUT, TimeUnit.SE
 
 ### The code
 
-One solution I came up with was to create a callback that I will pass to the method that has the call to JsonObjectRequest so that when we call this method we can use this callback to get the request value and process it further.
+One solution I came up with was to create a callback that I will pass to the method that has the call to JsonObjectRequest so that when we call this method we can use the callback to get the request value and process it further.
 
 Let's start by creating a new Android project and add the following lines to the AndroidManifest.xml file:
 
@@ -51,6 +51,92 @@ Let's start by creating a new Android project and add the following lines to the
         android:name=".controllers.NetworkController">
 ```
 
+We must add INTERNET permission in order to make the HTTP request and we added a Controller that will initialize the request queue.
+Next let's add the code for the controller:
+
+```java
+public class NetworkController extends Application {
+
+    private static final String TAG = NetworkController.class.getSimpleName();
+
+    private RequestQueue mRequestQueue;
+
+    private static NetworkController mInstance;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
+
+    public static synchronized NetworkController getInstance() {
+        return mInstance;
+    }
+
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+        }
+        return mRequestQueue;
+    }
+
+    public <T> void addToRequestQueue(Request<T> req, String tag) {
+        req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(req);
+    }
+
+    public <T> void addToRequestQueue(Request<T> req) {
+        req.setTag(TAG);
+        getRequestQueue().add(req);
+    }
+
+    public void cancelPendingRequests(Object tag) {
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(tag);
+        }
+    }
+
+}
+```
+
+Next step is to create the method that holds our JsonObjectRequest:
+
+```java
+public void fetchData(final DataCallback callback) {
+        String url = "your-url-here";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(tag, response.toString());
+
+                        try {
+                            callback.onSuccess(response);
+                        } catch (JSONException e) {
+                            Log.e(tag, e.getMessage(), e);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        VolleyLog.d(tag, "Error: " + error.getMessage());
+                    }
+                });
+
+        NetworkController.getInstance().addToRequestQueue(jsonObjectRequest);
+    }
+```
+
+As you can see above we added a parameter to the fetchData method representing the callback. Let's implement it:
+
+```java
+public interface DataCallback {
+    void onSuccess(JSONObject result);
+}
+```
+
+Now let's call the 
 
 ### Conclusion
 
