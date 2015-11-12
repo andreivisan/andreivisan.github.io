@@ -6,7 +6,7 @@ published: true
 
 ### Introduction
 
-<a href=""> Volley </a> is an HTTP library that makes networking for Android apps easier and most importantly, faster. One of the main features that Volley has is eliminating the need for using AsyncTask for network operations as well as allowing you to avoid using HttpUrlConnection and HttpClient. The main feature of Volley is that it is asynchronous which can lead to some issues when you want to do a synchronous request.
+<a href="http://developer.android.com/training/volley/index.html" target="_blank"> Volley </a> is an HTTP library that makes networking for Android apps easier and most importantly, faster. One of the main features that Volley has is eliminating the need for using AsyncTask for network operations as well as allowing you to avoid using HttpUrlConnection and HttpClient. The main feature of Volley is that it is asynchronous which can lead to some issues when you want to do a synchronous request.
 
 ### The problem
 
