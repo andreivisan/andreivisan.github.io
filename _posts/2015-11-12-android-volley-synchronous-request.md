@@ -10,7 +10,7 @@ published: false
 
 ### The problem
 
-One of the problems I faced using Volley was calling a webservice via its JsonObjectRequest inside an Android Library and wanting to return one of the values I received insinde the response. But wait ... you'll say ... can't you do it via Futures? 
+One of the problems I faced using Volley was calling a webservice via its JsonObjectRequest inside an Android Library and wanting to return one of the values I received inside the response. But wait ... you'll say ... can't you do it via Futures? 
 Well, here comes the second problem. But first let's have a look how dealing with Futures while using Volley would look like:
 
 ``` java
@@ -136,7 +136,7 @@ public interface DataCallback {
 }
 ```
 
-Now let's call fetchData and use the respose that comes from the webservice:
+Now let's call fetchData and use the response that comes from the webservice:
 
 ```java
 public void useData() {
