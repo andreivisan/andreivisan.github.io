@@ -42,7 +42,13 @@ One solution I came up with was to create a callback that I will pass to the met
 Let's start by creating a new Android project and add the following lines to the AndroidManifest.xml file:
 
 ``` xml
+<uses-permission android:name="android.permission.INTERNET"/>
 
+<application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
+        android:name=".controllers.NetworkController">
 ```
 
 
