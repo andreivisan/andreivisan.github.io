@@ -33,7 +33,7 @@ try {
 
 Let's analyze the code above. What we do is to create a RequestFuture and we pass it as parameter to our JsonObjectRequest which then we add to the request queue.
 Then the interesting part comes along. In order to get the response JSON object from our request we call the get() method on the future we declared above. We also set a timeout of let's say 10 seconds so we don't block the UI indefinitely in case our request times out.
-But here's the catch - we can't call future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) on the main thread (the UI thread) as it is a blocking operation and it will result in a TimeoutException. So in order to solve this issue we need to call future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) in an AsyncTask
+But here's the catch - we can't call ``` java future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) ``` on the main thread (the UI thread) as it is a blocking operation and it will result in a TimeoutException. So in order to solve this issue we need to call future.get(REQUEST_TIMEOUT, TimeUnit.SECONDS) in an AsyncTask
 
 ### The code
 
