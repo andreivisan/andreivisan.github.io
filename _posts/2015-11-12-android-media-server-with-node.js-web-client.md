@@ -275,4 +275,71 @@ Now that the server code is all ready and done let's finish the client code too 
 
 #### The Client - Render images and videos
 
+For the client side code let's add the following code to our `routes/index.js` file:
+
+```javascript
+router.get('/show-file', function(req, res) {
+  console.log("Request: %s | %s", req.query.fileName, req.query.extension);
+  if(req.query.extension.indexOf(".jpg") > -1) {
+    var url = "http://192.168.2.40:8080/get-image?name=" + req.query.fileName;
+    console.log("URL: %s", url);
+
+    request({
+      url: url,
+      json: true
+    },
+    function(error, response, body) {
+      console.log("Response received ");
+      res.render('mediaPlay', { image:response.body, video:null});
+    });
+  } else {
+    var url = "http://192.168.2.40:8080/get-video?name=" + req.query.fileName;
+    console.log("URL: %s", url);
+
+    request({
+      url: url,
+      json: true
+    },
+    function(error, response, body) {
+      console.log("Response received ");
+      res.render('mediaPlay', { image:null, video:response.body});
+    });
+  }
+});
+```
+
+The code above is preety straight forward as well. We check the extension of the file we clicked on and based on that we call the proper server method in order to get the correct media stream. In order to display the media file we click on I created a new view template called `mediaPlay` for which you can find the code bellow:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media play</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <% if(image) { %>
+      <div>
+        <img width="356" height="200" src="data:image/jpeg;base64, <%= image %>" />
+      </div>
+    <% } %>
+
+    <% if(video) { %>
+      <div>
+        <video width="356" height="200" controls >
+          <source src="data:video/mp4;base64, <%= video %>" type="video/mp4" />
+        </video>
+      </div>
+    <% } %>
+
+  </body>
+</html>
+```
+Please note that for both the image and vide display you have to use `data:image/jpeg;base64` or `data:video/mp4;base64` inside the `src` attribute since the stream we send to our web client is Base64 encoded.
+Now that all the code is in place you need to start again the app on your Android device or emulator and also start the Node.js server and enter `localhost:3000` in your browser then click on the media file you want to stream. After a bit of waiting based on the file size, since the server is an Android device, you should see the content of the media file you clicked on. If you want the vide to start automatically then you need to add `autoplay` attribute in the `video` tag.
+
 ### Conclusion
+
+I hope you find this post useful or at least informative and please let me know in the comments bellow if I can help you further or if you enjoyed the reading.
+There are lots of improvements you can add to the code above specially performance wise. I will try to present in a future post how we can stream the videos or larger media files in chunks so that we don't have to wait for the full video to be downloaded from the Android device.
