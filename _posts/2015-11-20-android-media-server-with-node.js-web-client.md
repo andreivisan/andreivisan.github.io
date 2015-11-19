@@ -1,16 +1,16 @@
 ---
 layout: post
 title: Android media server with Node.js web client
-published: false
+published: true
 ---
 
 ### Introduction
 
-In this post I am going to show you how you can create a media server on your Android device and stream media files, images and videos in our case, to a web client. The web client will be built using Node.js.
+In this post I am going to show you how to create a media server on your Android device and stream media files, images and videos in our case, to a web client. The web client will be built using Node.js.
 
 #### Motivation
 
-One may wonder how would an application like this help or which use cases it may serve. There are a lot of cases where people like to build their own media servers and clients in order to store and manage their personal photos and videos. There are multiple ways in which this task may be achieved with the help of different cloud solutions out there, like Dropbox or Google Drive. But there are cases where you don't want your media in the cloud and you prefer to have it all stored on your personal server and just sending them via mail just won't do it for you. 
+One may wonder how would an application like this help or which use cases it may serve. There are lots of cases where people like to build their own media servers and clients in order to store and manage their personal photos and videos. There are multiple ways in which this task may be achieved with the help of different cloud solutions out there, like Dropbox or Google Drive. But there are cases where you don't want your media in the cloud and you prefer to have it all stored on your personal server and just sending them via mail just won't do it for you. 
 
 #### Technologies
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-As you can see above, pretty much everything is just standard code and I have created the `startHttpServer()` which creates our server.
+As you can see above, pretty much everything is just standard boilerplate code and I have created the `startHttpServer()` which creates our server.
 
 #### The Server - Expose media files
 
@@ -204,7 +204,7 @@ Now that we have retrieved the file list let's display it by changing the `views
 </html>
 ```
 
-If you are not familiar with ejs syntax you can also use other template technologies like <a href="http://jade-lang.com/" target="_blank"> Jade </a> or you can find more documentation <a href="http://ejs.co/" target="_blank"> here </a>.
+If you are not familiar with ejs syntax you can also use other template technologies like <a href="http://jade-lang.com/" target="_blank"> Jade </a> or you can find more documentation about ejs <a href="http://ejs.co/" target="_blank"> here </a>.
 Now if you start the app on the device and you start the Node.js server by running `npm start` inside the client project folder and then run `localhost:3000` in your browser you should see a list of all the files you have inside the Camera folder on your device SD card. If you click on any of them you'll receive an error since we have not yet defined a method that responds to `show-files` request.
 
 #### The Server - Stream images
@@ -336,8 +336,8 @@ The code above is pretty straight forward as well. We check the extension of the
   </body>
 </html>
 ```
-Please note that for both the image and vide display you have to use `data:image/jpeg;base64` or `data:video/mp4;base64` inside the `src` attribute since the stream we send to our web client is Base64 encoded.
-Now that all the code is in place you need to start again the app on your Android device or emulator and also start the Node.js server and enter `localhost:3000` in your browser then click on the media file you want to stream. After a bit of waiting based on the file size, since the server is an Android device, you should see the content of the media file you clicked on. If you want the vide to start automatically then you need to add `autoplay` attribute in the `video` tag.
+Please note that for both the image and video display you have to use `data:image/jpeg;base64` or `data:video/mp4;base64` inside the `src` attribute since the stream we send to our web client is Base64 encoded.
+Now that all the code is in place you need to start again the app on your Android device or emulator and also start the Node.js server and enter `localhost:3000` in your browser then click on the media file you want to stream. After a bit of waiting based on the file size, since the server is an Android device, you should see the content of the media file you clicked on. If you want the video to start automatically then you need to add `autoplay` attribute in the `video` tag.
 
 ### Conclusion
 
