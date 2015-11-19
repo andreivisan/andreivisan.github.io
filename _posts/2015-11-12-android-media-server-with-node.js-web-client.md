@@ -110,15 +110,54 @@ private String getFileExtension(String fileName) {
 }
 ```
 
-Now, the next step is to expose this file list with the help of our HTTP server.
+Now, the next step is to expose this file list with the help of our HTTP server. For this I have created a class called `HttpServer` for which you can see the code bellow.
 
-#### The Server - Stream images
+```java
+public class HttpServer {
 
-#### The Server - Stream video
+    private static final String tag = HttpServer.class.getSimpleName();
+
+    private FileUtil fileUtil;
+
+    public HttpServer() {
+        fileUtil = new FileUtil();
+    }
+
+    public void createHttpServer() {
+        AsyncHttpServer httpServer = new AsyncHttpServer();
+        AsyncServer mAsyncServer = new AsyncServer();
+
+        httpServer.get("/get-media", new HttpServerRequestCallback() {
+            @Override
+            public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
+                try {
+                    Log.i(tag, "Request for file system received!");
+                    JSONArray mediaFilesArray = new FileUtil().getMediaFilesList();
+                    JSONObject mediaFiles = new JSONObject();
+                    mediaFiles.put("files", mediaFilesArray);
+                    Log.i(tag, "Response object: " + mediaFiles);
+                    response.send(mediaFiles);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        httpServer.listen(mAsyncServer, 8080);
+    }
+
+}
+```
+
+The code above is preety straight forward. We create a HTTP server and we expose the file list we have just retrieved in the `FileUtil` class.
 
 ### The Client
 
 #### The Client - Display files
+
+#### The Server - Stream images
+
+#### The Server - Stream video
 
 #### The Client - Render images and videos
 
