@@ -153,6 +153,8 @@ The code above is preety straight forward. We create a HTTP server and we expose
 
 ### The Client
 
+For the client, create a Node.js project using Express.js and ejs for the view templates. Also install the request module by running `npm install --save request` in your project's folder. If you are completely new to Node.js you can read one of my <a href="http://programminglife.io/searching-with-elasticsearch-and-node.js/" target="_blank"> previous posts </a> for a step by step tutorial on how to start a new project or just `git clone` the <a href="https://github.com/andreivisan/WebsocketClient" target="_blank"> project from my Github account </a> and run `npm install` inside the project's folder.
+
 #### The Client - Display files
 
 #### The Server - Stream images
