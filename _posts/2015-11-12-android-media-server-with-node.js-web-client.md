@@ -110,6 +110,8 @@ private String getFileExtension(String fileName) {
 }
 ```
 
+Now, the next step is to expose this file list with the help of our HTTP server.
+
 #### The Server - Stream images
 
 #### The Server - Stream video
