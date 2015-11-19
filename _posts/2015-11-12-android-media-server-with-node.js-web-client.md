@@ -240,6 +240,39 @@ Now that the code for image streaming is in place let's proceed to do the same f
 
 #### The Server - Stream video
 
+Same as for the image streaming let's add the code bellow to our `createHttpServer()` method inside the `HttpServer` class:
+
+```java
+httpServer.get("/get-video", new HttpServerRequestCallback() {
+    @Override
+    public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
+        Log.i(tag, "Request for video received!");
+        String fileName = request.getQuery().getString("name");
+        response.setContentType("video/mp4");
+        response.send(fileUtil.base64EncodedVideo(fileName));
+    }
+});
+```
+
+Same as in the image streaming case we need to Base64 encode the bytes of our video file. For this let's add the code bellow to our `FileUtil` class:
+
+```java
+public String base64EncodedVideo(String fileName) {
+    String movieString = null;
+    File sdCardMovie = new File("/sdcard/DCIM/Camera/"+fileName);
+    try {
+        byte[] videoBytes = FileUtils.readFileToByteArray(sdCardMovie);
+        movieString = Base64.encodeToString(videoBytes, Base64.NO_WRAP);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return movieString;
+}
+```
+
+The code above is preety straight forward but I want to mention that here I have used the Apache commons IO `FileUtils.readFileToByteArray` method to get the byte array of the video file.
+Now that the server code is all ready and done let's finish the client code too so we can stream our media files.
+
 #### The Client - Render images and videos
 
 ### Conclusion
