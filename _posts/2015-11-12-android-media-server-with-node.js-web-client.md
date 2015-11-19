@@ -73,6 +73,43 @@ As you can see above, preety much everything is just standard code and I have cr
 
 #### The Server - Expose media files
 
+Next step was to display all the media file on the SD card. Obviously, you can expose all the media files from all the folders on your device, but for the sake of simplicity I chose to only expose these.
+For this I started by creating a class called `FileUtil.java` to which I added the following method:
+
+```java
+public JSONArray getMediaFilesList() {
+    JSONArray mediaFilesList = new JSONArray();
+    File sdCardMediaFolder = new File("/sdcard/DCIM/Camera/");
+    try {
+        if(sdCardMediaFolder.isDirectory()) {
+            File[] files = sdCardMediaFolder.listFiles();
+            for(int i = 0; i < files.length; i++) {
+                JSONObject fileJson = new JSONObject();
+                fileJson.put("fileName", files[i].getName());
+                fileJson.put("extension", getFileExtension(files[i].getName()));
+                mediaFilesList.put(i, fileJson);
+            }
+        }
+    } catch (JSONException e) {
+        e.printStackTrace();
+    }
+    return mediaFilesList;
+}
+```
+
+So, as you can see above, I am getting all the contents of the Camera folder from my SD card and creating a JSON array in which I put a JSON object consisting of the file name and the extension of the files in the Camera folder.
+As you can see for the extension part I created a special method called `getFileExtensions(String fileName)` which takes the file name as a parameter. Please find bellow the code for this method:
+
+```java
+private String getFileExtension(String fileName) {
+    String extension = null;
+    int lastIndexOfDot = fileName.lastIndexOf(".");
+    extension = fileName.substring(lastIndexOfDot, fileName.length());
+    Log.i(tag, "File " + fileName + " has extension " + extension);
+    return extension;
+}
+```
+
 #### The Server - Stream images
 
 #### The Server - Stream video
