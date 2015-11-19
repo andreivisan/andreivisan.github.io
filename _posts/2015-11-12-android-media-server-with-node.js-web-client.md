@@ -177,6 +177,35 @@ router.get('/', function(req, res) {
 });
 ```
 
+As you can see above I started by adding the url for the request. The IP I used is the IP of your Android device which you can retrieve by goint to `Settings -> Wi-Fi -> on the top right menu choose Advanced` and at the bottom of the `Advanced` screen you can find the IP address of your Android device. I suggest you put this in an environment variable or on a configuration server. I hard coded it for the sake of simplicty.
+Now that we have retrieved the file list let's display it by changing the `views/index.ejs` as you can see bellow:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File list</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <ul>
+      <% files.forEach( function(file) { %>
+          <li>
+            <a href="/show-file?fileName=<%= file.fileName %>&extension=<%= file.extension %>">
+              <%= file.fileName %>
+            </a>
+          </li>
+      <% }) %>
+      <li>
+    </ul>
+
+  </body>
+</html>
+```
+
+If you are not familiar with ejs syntax you can also use other template technologies like <a href="http://jade-lang.com/" target="_blank"> Jade </a> or you can find more documentation <a href="http://ejs.co/" target="_blank"> here </a>.
+
 #### The Server - Stream images
 
 #### The Server - Stream video
