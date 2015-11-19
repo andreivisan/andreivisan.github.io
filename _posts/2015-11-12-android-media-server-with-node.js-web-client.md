@@ -15,8 +15,12 @@ One may wonder how would an application like this help or which use cases it may
 #### Technologies
 
 In order to achieve this result I have used AndroidAsync for the server as well as Apache commons IO and Node.js with Express, ejs and request module.
+You can find on my Github account the code for the <a href="https://github.com/andreivisan/AndroidVideoStreamServer" target="_blank"> server </a> as well as for the <a href="https://github.com/andreivisan/WebsocketClient" target="_blank"> client </a>.
 
 ### The Server
+
+Let's start by diving into how the server side was built. In a <a href="http://programminglife.io/android-http-server-with-androidasync" target="_blank"> previous post </a> I have presented ways to make a server out of your Android device, but the response was just a simple JSON object. In this post we will dive a bit deeper into how to stream data via a HTTP server.
+For this I suggest you start 
 
 #### The Server - Expose media files
 
