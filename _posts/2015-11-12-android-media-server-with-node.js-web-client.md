@@ -6,7 +6,7 @@ published: false
 
 ### Introduction
 
-In this post I am going to show you how you can creade a media server on your Android device and stream media files, images and videos in our case, to a web client. The web client will be built using Node.js.
+In this post I am going to show you how you can create a media server on your Android device and stream media files, images and videos in our case, to a web client. The web client will be built using Node.js.
 
 #### Motivation
 
@@ -20,7 +20,7 @@ You can find on my Github account the code for the <a href="https://github.com/a
 ### The Server
 
 Let's start by diving into how the server side was built. In a <a href="http://programminglife.io/android-http-server-with-androidasync" target="_blank"> previous post </a> I have presented ways to make a server out of your Android device, but the response was just a simple JSON object. In this post we will dive a bit deeper into how to stream data via a HTTP server.
-For this I suggest you start a simple blank activity Android project. You may wonder why not just a service that exposes all the necessary infromation. I suggest to go with a simple blank activity for the purpose of extending this project with more functionality, like choosing which types of files to expose or which folders, etc.
+For this I suggest you start a simple blank activity Android project. You may wonder why not just a service that exposes all the necessary information. I suggest to go with a simple blank activity for the purpose of extending this project with more functionality, like choosing which types of files to expose or which folders, etc.
 On the `MainActivity.java` on the `onCreate` method I called `startHttpServer()`. Please find bellow the complete code for the `MainActivity.java`
 
 ```java
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-As you can see above, preety much everything is just standard code and I have created the `startHttpServer()` which creates our server.
+As you can see above, pretty much everything is just standard code and I have created the `startHttpServer()` which creates our server.
 
 #### The Server - Expose media files
 
@@ -149,7 +149,7 @@ public class HttpServer {
 }
 ```
 
-The code above is preety straight forward. We create a HTTP server and we expose the file list we have just retrieved in the `FileUtil` class.
+The code above is pretty straight forward. We create a HTTP server and we expose the file list we have just retrieved in the `FileUtil` class.
 
 ### The Client
 
@@ -157,7 +157,7 @@ For the client, create a Node.js project using Express.js and ejs for the view t
 
 #### The Client - Display files
 
-Now that you have the Node.js project initialized let's start by addding the code to request the list of files from the Android device that we want to display and stream. For this add the following code to your `routes/index.js` :
+Now that you have the Node.js project initialized let's start by adding the code to request the list of files from the Android device that we want to display and stream. For this add the following code to your `routes/index.js` :
 
 ```javascript
 var request = require("request");
@@ -177,7 +177,7 @@ router.get('/', function(req, res) {
 });
 ```
 
-As you can see above I started by adding the url for the request. The IP I used is the IP of your Android device which you can retrieve by goint to `Settings -> Wi-Fi -> on the top right menu choose Advanced` and at the bottom of the `Advanced` screen you can find the IP address of your Android device. I suggest you put this in an environment variable or on a configuration server. I hard coded it for the sake of simplicty. The port `8080` is the port I defined in `HttpServer.java` by declaring `httpServer.listen(mAsyncServer, 8080)`.
+As you can see above I started by adding the url for the request. The IP I used is the IP of your Android device which you can retrieve by going to `Settings -> Wi-Fi -> on the top right menu choose Advanced` and at the bottom of the `Advanced` screen you can find the IP address of your Android device. I suggest you put this in an environment variable or on a configuration server. I hard coded it for the sake of simplicity. The port `8080` is the port I defined in `HttpServer.java` by declaring `httpServer.listen(mAsyncServer, 8080)`.
 Now that we have retrieved the file list let's display it by changing the `views/index.ejs` as you can see bellow:
 
 ```html
@@ -270,7 +270,7 @@ public String base64EncodedVideo(String fileName) {
 }
 ```
 
-The code above is preety straight forward but I want to mention that here I have used the Apache commons IO `FileUtils.readFileToByteArray` method to get the byte array of the video file.
+The code above is pretty straight forward but I want to mention that here I have used the Apache commons IO `FileUtils.readFileToByteArray` method to get the byte array of the video file.
 Now that the server code is all ready and done let's finish the client code too so we can stream our media files.
 
 #### The Client - Render images and videos
@@ -308,7 +308,7 @@ router.get('/show-file', function(req, res) {
 });
 ```
 
-The code above is preety straight forward as well. We check the extension of the file we clicked on and based on that we call the proper server method in order to get the correct media stream. In order to display the media file we click on I created a new view template called `mediaPlay` for which you can find the code bellow:
+The code above is pretty straight forward as well. We check the extension of the file we clicked on and based on that we call the proper server method in order to get the correct media stream. In order to display the media file we click on I created a new view template called `mediaPlay` for which you can find the code bellow:
 
 ```html
 <!DOCTYPE html>
