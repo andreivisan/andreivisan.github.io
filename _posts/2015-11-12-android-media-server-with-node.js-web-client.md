@@ -209,6 +209,35 @@ Now if you start the app on the device and you start the Node.js server by runni
 
 #### The Server - Stream images
 
+Now that we can see the list of files let's start creating the server side code to help us stream the pictures from our Android device. Let's add the code bellow to our `createHttpServer()` method inside the `HttpServer` class:
+
+```java
+httpServer.get("/get-image", new HttpServerRequestCallback() {
+    @Override
+    public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
+        Log.i(tag, "Request for image received!");
+        String fileName = request.getQuery().getString("name");
+        response.setContentType("image/jpeg");
+        response.send(fileUtil.base64EncodedImage(fileName));
+    }
+});
+```
+
+As you can see above we are sending the Base64 encoded bytes of the image to our web client. In order to obtain the Base64 encoded bytes we need to add the following method to our `FileUtil` class:
+
+```java
+public String base64EncodedImage(String fileName) {
+    Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/DCIM/Camera/" + fileName);
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+    byte[] bytes = baos.toByteArray();
+    String encodedImage = Base64.encodeToString(bytes, Base64.DEFAULT);
+    return encodedImage;
+}
+```
+
+Now that the code for image streaming is in place let's proceed to do the same for video streaming.
+
 #### The Server - Stream video
 
 #### The Client - Render images and videos
