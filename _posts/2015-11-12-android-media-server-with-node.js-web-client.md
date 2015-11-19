@@ -157,6 +157,26 @@ For the client, create a Node.js project using Express.js and ejs for the view t
 
 #### The Client - Display files
 
+Now that you have the Node.js project initialized let's start by addding the code to request the list of files from the Android device that we want to display and stream. For this add the following code to your `routes/index.js` :
+
+```javascript
+var request = require("request");
+
+router.get('/', function(req, res) {
+  var url = "http://192.168.2.40:8080/get-media"
+
+  request({
+    url: url,
+    json: true
+  },
+  function(error, response, body) {
+    console.log("Response received %s", JSON.stringify(response.body.files));
+    res.render('index', {files: response.body.files});
+  });
+
+});
+```
+
 #### The Server - Stream images
 
 #### The Server - Stream video
