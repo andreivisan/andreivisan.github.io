@@ -50,15 +50,15 @@ public static String changeColorHSB(String color) {
 }
 ```
 
-## Getting the string HEX of a color from colors.xml
+#### Getting the string HEX of a color from colors.xml
 
 The call to this method should look something like this: `changeColorHSB(getResources().getString(R.color.black))`. This should give you the hex value as string of the color under the name `black` defined in your `colors.xml` file.
 
-## Converting HEX color to HSV
+#### Converting HEX color to HSV
 
 So what I did in the method above was to get the string hex code of a color I set in `colors.xml` and convert it to `int` so I can then convert it to an `HSV float array` which has size 3 and contains the `Hue`, the `Saturation`  and the `Value` for our color. After adding `0.1` to the `Saturation` and substracting `0.1` from `Value` I converted the `HSV` color into `ARGB` color.
 
-## Converting ARGB color to HEX
+#### Converting ARGB color to HEX
 
 In order to convert the `ARGB` color to `HEX` I used the following statement: `String.format("#%08X", argbColor);`.
 And that was it, now we have a darker shade of the color we pass as parameter to our `changeColorHSB` method.
