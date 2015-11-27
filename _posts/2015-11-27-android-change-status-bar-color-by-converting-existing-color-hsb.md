@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android change status bar color by converting existing color's HSB
-published: false
+published: true
 ---
 
 ### Introduction
@@ -31,7 +31,7 @@ As you can see in the image above the way to add a custom color to your toolbar 
 </resources>
 ```
 
-But if we want to build an application that can change the toolbar color based on certain parameters, we want to set the status bar color too, based on the toolbar color and that can't be achieved by hardcoding the colors. 
+But let's say we want to build an application that can change the toolbar color based on certain parameters and we want to set the status bar color too, based on the toolbar color and that can't be achieved by hardcoding the colors.
 
 ### The solution
 
@@ -52,15 +52,18 @@ public static String changeColorHSB(String color) {
 
 #### Getting the string HEX of a color from colors.xml
 
-The call to this method should look something like this: `changeColorHSB(getResources().getString(R.color.black))`. This should give you the hex value as string of the color under the name `black` defined in your `colors.xml` file.
+The call to this method should look something like this: `changeColorHSB(getResources().getString(R.color.black))`. This should give you the string of the hex value of the color under the name `black` defined in your `colors.xml` file.
 
 #### Converting HEX color to HSV
 
-So what I did in the method above was to get the string hex code of a color I set in `colors.xml` and convert it to `int` so I can then convert it to an `HSV float array` which has size 3 and contains the `Hue`, the `Saturation`  and the `Value` for our color. After adding `0.1` to the `Saturation` and substracting `0.1` from `Value` I converted the `HSV` color into `ARGB` color.
+So what I did in the method above was to get the string hex code of a color I set in `colors.xml` and convert it to `int` so I can then convert it to an `HSV float array` which has size 3 and contains the `Hue`, the `Saturation`  and the `Value` for our color. After adding `0.1` to the `Saturation` and subtracting `0.1` from `Value` I converted the `HSV` color into `ARGB` color.
 
 #### Converting ARGB color to HEX
 
 In order to convert the `ARGB` color to `HEX` I used the following statement: `String.format("#%08X", argbColor);`.
-And that was it, now we have a darker shade of the color we pass as parameter to our `changeColorHSB` method.
+And that's it, now we have a darker shade of the color we pass as parameter to our `changeColorHSB` method.
 
 ### Conclusion
+
+Even though this might not be a common use case, I hope the solution above will help somebody.
+Please leave a comment bellow if it helped you or if you need any further help or just want to leave some suggestions.
