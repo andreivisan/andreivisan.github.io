@@ -68,7 +68,8 @@ Now in order to change the color of your status bar call this method in your act
 getWindow().
   setStatusBarColor(
     Color.parseColor(
-      ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.grey))));
+      ColorUtil.changeColorHSB(
+        parentActivity.getResources().getString(R.color.grey))));
 ``` 
 
 or from your fragment: 
@@ -78,7 +79,8 @@ getActivity().
   getWindow().
     setStatusBarColor(
       Color.parseColor(
-        ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.grey))));
+        ColorUtil.changeColorHSB(
+          parentActivity.getResources().getString(R.color.grey))));
 ```
 
 ### Conclusion
