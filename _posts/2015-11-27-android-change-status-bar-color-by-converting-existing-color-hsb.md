@@ -62,7 +62,24 @@ So what I did in the method above was to get the string hex code of a color I se
 
 In order to convert the `ARGB` color to `HEX` I used the following statement: `String.format("#%08X", argbColor);`.
 And that's it, now we have a darker shade of the color we pass as parameter to our `changeColorHSB` method. 
-Now in order to change the color of your status bar call this method in your activity: `getWindow().setStatusBarColor(Color.parseColor(ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.grey))));` or from your fragment: `getActivity().getWindow().setStatusBarColor(Color.parseColor(ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.nespresso_grey))));`
+Now in order to change the color of your status bar call this method in your activity: 
+
+``` java
+getWindow().
+  setStatusBarColor(
+    Color.parseColor(
+      ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.grey))));
+``` 
+
+or from your fragment: 
+
+```java
+getActivity().
+  getWindow().
+    setStatusBarColor(
+      Color.parseColor(
+        ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.nespresso_grey))));
+```
 
 ### Conclusion
 
