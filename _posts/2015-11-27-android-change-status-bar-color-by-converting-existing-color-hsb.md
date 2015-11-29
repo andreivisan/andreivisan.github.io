@@ -78,7 +78,7 @@ getActivity().
   getWindow().
     setStatusBarColor(
       Color.parseColor(
-        ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.nespresso_grey))));
+        ColorUtil.changeColorHSB(parentActivity.getResources().getString(R.color.grey))));
 ```
 
 ### Conclusion
