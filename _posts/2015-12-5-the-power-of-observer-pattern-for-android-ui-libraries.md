@@ -35,7 +35,8 @@ Let's create the view that we will export from our library to the client project
         android:layout_height="60dp"
         android:layout_gravity="bottom"
         android:background="@color/darkGrey"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="300dp">
 
         <TextView
             android:id="@+id/post_button_label"
@@ -132,9 +133,11 @@ public class AddPostFragment extends Fragment {
     }
 
     private void initView() {
+        mPostContent.requestFocus();
         mPostContent.setOnEditTextImeBackListener(new EditTextImeBackListener() {
             @Override
             public void onImeBack(CustomEditText ctrl, String text) {
+                getActivity().getSupportFragmentManager().popBackStack();
                 getActivity().getSupportFragmentManager().beginTransaction().remove(mCurrentFragment).commit();
             }
         });
@@ -194,7 +197,8 @@ The `TextView` will hold the content of our post and the `FrameLayout` is the fr
     android:layout_height="60dp"
     android:layout_gravity="bottom"
     android:background="@color/darkGrey"
-    android:layout_marginTop="50dp">
+    android:layout_marginTop="50dp"
+    android:onClick="addPost">
 
     <TextView
         android:id="@+id/add_post_button_label"
@@ -208,3 +212,55 @@ The `TextView` will hold the content of our post and the `FrameLayout` is the fr
 
 </RelativeLayout>
 ```
+
+Next we have to build the `MainActivity.java` that will start our `AddPostFragment` and that will post whatever we choose to.
+
+``` java
+public class MainActivity extends FragmentActivity {
+
+    private CreatePostFragment mCreatePostFragment;
+    private TextView mPostContent;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mCreatePostFragment = new CreatePostFragment();
+        mPostContent = (TextView)findViewById(R.id.posted_content);
+
+        initView();
+    }
+
+    private void initView() {
+        getSupportFragmentManager().
+                beginTransaction().
+                add(R.id.fragment_container, mCreatePostFragment).
+                addToBackStack(null).
+                commit();
+    }
+
+    public void addPost(View view) {
+        AddPostFragment addPostFragment = new AddPostFragment();
+        addPostFragment.setmPublishPostListener(new PublishPostListener() {
+            @Override
+            public void onPostPublished(String postContent) {
+                mPostContent.setText(postContent);
+            }
+        });
+
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.fragment_container, addPostFragment).
+                addToBackStack(null).
+                commit();
+    }
+}
+```
+
+The part that we have to focus on is the `public void addPost(View view)` which is the method that is called on click on the `Add post` button. What this method does is that it initializes the `AddPostFragment` and sets the `PublishPostListener`. On the `public void onPostPublished(String postContent)` we get the post content and we set it on our `TextView`.
+
+### Conclusion
+
+I hope the post above shows how important the Observer pattern is when we have to create and/or export custom UI components and libraries. Please leave a comment bellow if you find this post useful.
+The full code for this project can be found on my <a href="https://github.com/andreivisan/AndroidListeners" target=_blank"> GitHub account </a>.
