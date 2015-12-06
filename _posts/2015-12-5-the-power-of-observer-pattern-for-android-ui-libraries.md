@@ -24,7 +24,7 @@ Let's create the view that we will export from our library to the client project
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+    <io.programminglife.uilibrary.customcomponents.CustomEditText
         android:id="@+id/post_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -53,6 +53,25 @@ Let's create the view that we will export from our library to the client project
 ```
 
 As you can see above I created a simple `EditText` and a `RelativeLayout` that will represent our post content button. Now let's continue with the code that represents the fragment that will inflate the view above.
+
+```java
+public class AddPostFragment extends Fragment {
+
+    private CustomEditText mPostContent;
+    private RelativeLayout mPostButton;
+    private View mFragmentView;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mFragmentView = inflater.inflate(R.layout.post_form, container, false);
+
+        mPostContent = (CustomEditText)mFragmentView.findViewById(R.id.post_content);
+        mPostButton = (RelativeLayout)mFragmentView.findViewById(R.id.post_button);
+
+        return mFragmentView;
+    }
+}
+```
 
 #### Custom View
 
