@@ -52,7 +52,48 @@ Let's create the view that we will export from our library to the client project
 </LinearLayout>
 ```
 
-As you can see above I created a simple `EditText` and a `RelativeLayout` that will represent our post content button. Now let's continue with the code that represents the fragment that will inflate the view above.
+As you can see above I created a custom `EditText` called `CustomEditText` because I want to propagate the event that will hide my soft keyboard so that when this happens the whole view is closed. 
+
+```java
+public class CustomEditText extends EditText {
+
+    private EditTextImeBackListener mOnImeBack;
+
+    public CustomEditText(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+
+    }
+
+    public CustomEditText(Context context, AttributeSet attrs) {
+        super(context, attrs);
+
+    }
+
+    public CustomEditText(Context context) {
+        super(context);
+
+    }
+
+    @Override
+    public boolean onKeyPreIme(int keyCode, KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            if (mOnImeBack != null) {
+                mOnImeBack.onImeBack(this, this.getText().toString());
+            }
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
+    public void setOnEditTextImeBackListener(EditTextImeBackListener listener) {
+        mOnImeBack = listener;
+    }
+
+}
+```
+
+At this point we can already see the power of Observer pattern in our custom component. What I did was to create a custom listener called `EditTextImeBackListener` that contains one method `void onImeBack(CustomEditText ctrl, String text)` which gets triggered when the back button that closes the soft keyboard is pressed. Now, when we will implement this method in our fragment we can decide what action we want to take when the back button that closes the soft keyboard is pressed. In our case we will just close our view together with the keyboard.
+
+Now let's continue with the code that represents the fragment that will inflate the view above.
 
 ```java
 public class AddPostFragment extends Fragment {
