@@ -6,7 +6,11 @@ published: false
 
 ### Introduction
 
+In this post I want to emphasize the importance of the Observer pattern in creating custom UI components and/or custom UI libraries. Observer pattern is one of the most important design pattern, but we might not see its immediate benefetis when we have to build Android projects.
+
 ### The Observer pattern
+
+As the <a href="https://en.wikipedia.org/wiki/Design_Patterns" target=""> Gof (Gang of Four) </a> states in their famous <a href="http://amzn.to/1llzMHz" target="_blank"> Design Patterns </a> book, the Observer pattern defines a one-to-many dependecy between objects so that when one object changes state, all its dependents are notified and updated automatically. Observer pattern falls under behavioral pattern category.
 
 ### The library
 
