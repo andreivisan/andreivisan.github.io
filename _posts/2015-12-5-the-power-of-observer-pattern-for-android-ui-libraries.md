@@ -6,19 +6,19 @@ published: false
 
 ### Introduction
 
-In this post I want to emphasize the importance of the Observer pattern in creating custom UI components and/or custom UI libraries. Observer pattern is one of the most important design pattern, but we might not see its immediate benefetis when we have to build Android projects.
+In this post I want to emphasize the importance of the Observer pattern in creating custom UI components and/or custom UI libraries. Observer pattern is one of the most important design pattern, but we might not see its immediate benefits when we have to build Android projects.
 
 ### The Observer pattern
 
-As the <a href="https://en.wikipedia.org/wiki/Design_Patterns" target=""> Gof (Gang of Four) </a> states in their famous <a href="http://amzn.to/1llzMHz" target="_blank"> Design Patterns </a> book, the Observer pattern defines a one-to-many dependecy between objects so that when one object changes state, all its dependents are notified and updated automatically. Observer pattern falls under behavioral pattern category.
+As the <a href="https://en.wikipedia.org/wiki/Design_Patterns" target=""> Gof (Gang of Four) </a> states in their famous <a href="http://amzn.to/1llzMHz" target="_blank"> Design Patterns </a> book, the Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. Observer pattern falls under behavioral pattern category.
 
 ### The library
 
-Our UI library will export an EditText field and a simple button that will post whatever we choose to write in our EditText. This is a simplified version of adding a post or a comment using a pre-defined component insinde a library to add the text we wish to post. The main purpose of this example is to emphasize the value of the Observer pattern when building a UI library.
+Our UI library will export an EditText field and a simple button that will post whatever we choose to write in our EditText. This is a simplified version of adding a post or a comment using a pre-defined component inside a library to add the text we wish to post. The main purpose of this example is to emphasize the value of the Observer pattern when building a UI library.
 
 First thing we need to create to get started is an Android project with an empty activity. Once this is done then we will create an Android library as a module inside our project. In Android Studio we can achieve this by right clicking on the project name and then New -> Module. In the selection window that pops up we will select Android library. I took the liberty to call mine just `uilibrary`.
 
-Now if we take a look at our `settings.gradle` file inside our project we'll see that our library module was added as well. In order to be able to use it in our client project we will edit our `build.gradle` insinde the client project by adding the following line: `compile project(':uilibrary')`.
+Now if we take a look at our `settings.gradle` file inside our project we'll see that our library module was added as well. In order to be able to use it in our client project we will edit our `build.gradle` inside the client project by adding the following line: `compile project(':uilibrary')`.
 
 Let's create the view that we will export from our library to the client project. I created a new layout called `post_form.xml`. 
 
@@ -192,7 +192,7 @@ The `activity_main.xml` will look like the code bellow.
 </RelativeLayout>
 ```
 
-The `TextView` will hold the content of our post and the `FrameLayout` is the fragment containter which initially will hold our `Add post` button which on click will be replaced with our fragment from the UI library. The code for the `Add post` button is:
+The `TextView` will hold the content of our post and the `FrameLayout` is the fragment container which initially will hold our `Add post` button which on click will be replaced with our fragment from the UI library. The code for the `Add post` button is:
 
 ``` xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
