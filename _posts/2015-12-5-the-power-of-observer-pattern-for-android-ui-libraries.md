@@ -133,8 +133,10 @@ public class AddPostFragment extends Fragment {
     }
 
     private void showInputKeyboard() {
-        inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+        inputMethodManager = (InputMethodManager)getActivity().
+                                                    getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 
+                                           InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
     private void initView() {
