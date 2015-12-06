@@ -102,6 +102,7 @@ public class AddPostFragment extends Fragment {
     private RelativeLayout mPostButton;
     private View mFragmentView;
     private Fragment mCurrentFragment;
+    private InputMethodManager inputMethodManager;
 
     private PublishPostListener mPublishPostListener;
 
@@ -113,9 +114,21 @@ public class AddPostFragment extends Fragment {
         mPostContent = (CustomEditText)mFragmentView.findViewById(R.id.post_content);
         mPostButton = (RelativeLayout)mFragmentView.findViewById(R.id.post_button);
 
+        showInputKeyboard();
         initView();
 
         return mFragmentView;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        inputMethodManager.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+    }
+
+    private void showInputKeyboard() {
+        inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
     private void initView() {
@@ -145,9 +158,5 @@ public class AddPostFragment extends Fragment {
 Above we have another demonstration of how powerful the Observer pattern can get when exporting custom components.
 Let's first look at the way we implemented the pressing on the back button to dismiss the soft keyboard. As I said above we can implement this any way we want and in our case it makes perfect sense to just dismiss the whole view together with the soft keyboard.
 Now let's look at another listener we have implemented and that is `PublishPostListener`. This listener has a method called `void onPostPublished(String postContent)` that will get triggered once we click on `Post content` button and will provide us with the text inside our custom `EditText`. Obviously you can make this more complex by adding on `onError` method that gets triggered for example when there is no text inside the `EditText`. But for the purpose of this post one method should do.
-
-#### Custom View
-
-#### Custom EditText
 
 ### The client
