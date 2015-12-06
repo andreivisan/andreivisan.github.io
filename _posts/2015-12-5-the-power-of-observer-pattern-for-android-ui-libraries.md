@@ -1,16 +1,17 @@
 ---
 layout: post
 title: The power of Observer pattern for Android UI libraries
-published: false
+published: true
 ---
 
 ### Introduction
 
-In this post I want to emphasize the importance of the Observer pattern in creating custom UI components and/or custom UI libraries. Observer pattern is one of the most important design pattern, but we might not see its immediate benefits when we have to build Android projects.
+In this post I want to emphasize the importance of the Observer pattern in creating custom UI components and/or custom UI libraries. Observer pattern is one of the most important design pattern, but we might not see its immediate benefits when we have to build Android projects although it is implemented in a lot of default components that we use. One of the most common is `View.OnClickListener()`.
+The full code for this project can be found on my <a href="https://github.com/andreivisan/AndroidListeners" target="_blank"> GitHub account </a>.
 
 ### The Observer pattern
 
-As the <a href="https://en.wikipedia.org/wiki/Design_Patterns" target=""> Gof (Gang of Four) </a> states in their famous <a href="http://amzn.to/1llzMHz" target="_blank"> Design Patterns </a> book, the Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. Observer pattern falls under behavioral pattern category.
+As the <a href="https://en.wikipedia.org/wiki/Design_Patterns" target="_blank"> Gof (Gang of Four) </a> states in their famous <a href="http://amzn.to/1llzMHz" target="_blank"> Design Patterns </a> book, the Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. Observer pattern falls under behavioral pattern category.
 
 ### The library
 
