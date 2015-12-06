@@ -18,7 +18,7 @@ Now if we take a look at our `settings.gradle` file inside our project we'll see
 
 Let's create the view that we will export from our library to the client project. I created a new layout called `post_form.xml`. 
 
-```xml
+``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
@@ -160,3 +160,51 @@ Let's first look at the way we implemented the pressing on the back button to di
 Now let's look at another listener we have implemented and that is `PublishPostListener`. This listener has a method called `void onPostPublished(String postContent)` that will get triggered once we click on `Post content` button and will provide us with the text inside our custom `EditText`. Obviously you can make this more complex by adding on `onError` method that gets triggered for example when there is no text inside the `EditText`. But for the purpose of this post one method should do.
 
 ### The client
+
+The `activity_main.xml` will look like the code bellow.
+
+``` xml
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/posted_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
+```
+
+The `TextView` will hold the content of our post and the `FrameLayout` is the fragment containter which initially will hold our `Add post` button which on click will be replaced with our fragment from the UI library. The code for the `Add post` button is:
+
+``` xml
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_post_button"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="bottom"
+    android:background="@color/darkGrey"
+    android:layout_marginTop="50dp">
+
+    <TextView
+        android:id="@+id/add_post_button_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Add post"/>
+
+</RelativeLayout>
+```
