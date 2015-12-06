@@ -29,10 +29,30 @@ Let's create the view that we will export from our library to the client project
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <RelativeLayout
+        android:id="@+id/post_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@color/darkGrey"
+        android:layout_marginTop="50dp">
 
+        <TextView
+            android:id="@+id/post_button_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Post content"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
 ```
+
+As you can see above I created a simple `EditText` and a `RelativeLayout` that will represent our post content button. Now let's continue with the code that represents the fragment that will inflate the view above.
 
 #### Custom View
 
