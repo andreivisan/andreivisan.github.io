@@ -12,8 +12,8 @@ You can find the full code for this tutorial on <a href="https://github.com/andr
 
 ### Installing necessary packages
 
-Let's start by installing the necessary packages for our crawler. First one will be <a href="https://github.com/cgiffard/node-simplecrawler" target="_blank"> simplecrawler </a>. Simplecrawler is designed to provide the most basic possible API for crawling websites, while being as flexible and robust as possible. It has a lot of usefull events that can help you track the progress of your crawling process. In order to install this module you need to run `npm install --save simplecrawler` inside your project.
-Second module we will install is <a href="https://github.com/cheeriojs/cheerio" target="_blank"> cheerio </a>. Cheerio is a fast, flexible, and lean implementation of core jQuery designed specifically for the server. We will use cheerio to parse the content of the crawled data and to structure it in any way we want.
+Let's start by installing the necessary packages for our crawler. First one will be <a href="https://github.com/cgiffard/node-simplecrawler" target="_blank"> simplecrawler </a>. Simplecrawler is designed to provide the most basic possible API for crawling websites, while being as flexible and robust as possible. It has a lot of usefull events that can help you track the progress of your crawling process. In order to install this module you need to run `npm install --save simplecrawler` inside your project folder.
+Second module we will install is <a href="https://github.com/cheeriojs/cheerio" target="_blank"> cheerio </a>. Cheerio is a fast, flexible, and lean implementation of core jQuery designed specifically for the server. We will use cheerio to parse the content of the crawled data and to structure it in any way we want. In order to install cheerio you need to run `npm install --save cheerio` inside your project folder.
 
 ### The crawler
 
