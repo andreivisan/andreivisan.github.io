@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Node.js crawler using simplecrawler and cheerio
-published: false
+published: true
 ---
 
 ### Introduction
