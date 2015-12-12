@@ -39,6 +39,10 @@ module.exports.crawl = function(callback) {
 }
 ```
 
+The purpose of this crawler is to crawl my blog and get all the information on the first page. As you can see it is very easy to initialize, all you have to do is to call the crawl function with the `URL` as parameter. There are multiple ways to initialize it, but I found this way the best since it allows me to further configure it. You can also set crawler's depth by using `myCrawler.maxDepth` which by default is 0, or the interval by using `myCrawler.interval` or the number of processes you want to start for crawling by using `myCrawler.maxConcurrency`. There are many others parameters you can use which you can find on the <a href="https://github.com/cgiffard/node-simplecrawler" target="_blank">simplecrawler page</a>.
+
+Simple crawler also has a lot of events you can call to check the status of the crawler. For this example I used `crawlstart` which marks the start of the crawling process and `fetchcomplete` which is fired when the resource is completely downloaded. There are many others you can use and you can find them on the <a href="https://github.com/cgiffard/node-simplecrawler" target="_blank">simplecrawler page</a>.
+
 ### The parser
 
 ### Conclusion
