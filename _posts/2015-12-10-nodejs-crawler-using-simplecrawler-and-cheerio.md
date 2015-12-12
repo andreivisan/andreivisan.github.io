@@ -4,7 +4,7 @@ title: Node.js crawler using simplecrawler and cheerio
 published: false
 ---
 
-### Intorduction
+### Introduction
 
 In this post I will show you how to use two very popular Node.js modules in order to create a web crawler and also how to parse the data that you have crawled and structure it the way you want.
 One of the main motivations for writing this post was the fact that I had to build a pretty complex web crawler and I found that <a href="https://github.com/cgiffard/node-simplecrawler" target="_blank"> simplecrawler </a> is an awesome Node.js module but there are not so many tutorials on how to use it besides the documentation provided by the author.
@@ -12,7 +12,7 @@ You can find the full code for this tutorial on <a href="https://github.com/andr
 
 ### Installing necessary packages
 
-Let's start by installing the necessary packages for our crawler. First one will be <a href="https://github.com/cgiffard/node-simplecrawler" target="_blank"> simplecrawler </a>. Simplecrawler is designed to provide the most basic possible API for crawling websites, while being as flexible and robust as possible. It has a lot of usefull events that can help you track the progress of your crawling process. In order to install this module you need to run `npm install --save simplecrawler` inside your project folder.
+Let's start by installing the necessary packages for our crawler. First one will be <a href="https://github.com/cgiffard/node-simplecrawler" target="_blank"> simplecrawler </a>. Simplecrawler is designed to provide the most basic possible API for crawling websites, while being as flexible and robust as possible. It has a lot of useful events that can help you track the progress of your crawling process. In order to install this module you need to run `npm install --save simplecrawler` inside your project folder.
 Second module we will install is <a href="https://github.com/cheeriojs/cheerio" target="_blank"> cheerio </a>. Cheerio is a fast, flexible, and lean implementation of core jQuery designed specifically for the server. We will use cheerio to parse the content of the crawled data and to structure it in any way we want. In order to install cheerio you need to run `npm install --save cheerio` inside your project folder.
 
 ### The crawler
@@ -49,7 +49,7 @@ On `fetchcomplete` I triggered a callback function with the `responseBuffer` (wh
 
 The scrappers's role will be to get the page that the crawler downloaded, parse it and extract the title and the date of each blog post from my blog.
 
-For the scrapper I created another module called `scrapper` which containes 2 files. One is `index.js` which contains the configuration file called `scrapper-config.js`. The configuration file contains the elements description of the information I want to extract.
+For the scrapper I created another module called `scrapper` which contains 2 files. One is `index.js` which contains the configuration file called `scrapper-config.js`. The configuration file contains the elements description of the information I want to extract.
 
 ``` json
 {
@@ -61,7 +61,7 @@ For the scrapper I created another module called `scrapper` which containes 2 fi
 }
 ```
 
-So, as you can see above I setted an element called `base` which holds the class of the base element containing all my articles. If you use `Firebug` or `Developer tools` you cand check the homepage of my blog and see that the element that holds all my posts is a `selection` tag with class `.archive`. I applied the same logic for the title and the date.
+So, as you can see above I set an element called `base` which holds the class of the base element containing all my articles. If you use `Firebug` or `Developer tools` you can check the homepage of my blog and see that the element that holds all my posts is a `selection` tag with class `.archive`. I applied the same logic for the title and the date.
 
 Bellow is the code for the scrapper found in `scrapper/index.js`:
 
@@ -85,11 +85,11 @@ module.exports.extractData = function(html, config) {
 }
 ```
 
-For the function above, the `html` parameter represents the information downloaded by the cralwer and the `config` parameter represents the `JSON` object found int `scrapper-config.json`. 
+For the function above, the `html` parameter represents the information downloaded by the crawler and the `config` parameter represents the `JSON` object found int `scrapper-config.json`. 
 
 ### Putting it all together
 
-Now that both the crawler and the scrapper are ready let's modifi the `routes/index.js` file to look like the code bellow:
+Now that both the crawler and the scrapper are ready let's modify the `routes/index.js` file to look like the code bellow:
 
 ``` js
 var express = require('express');
