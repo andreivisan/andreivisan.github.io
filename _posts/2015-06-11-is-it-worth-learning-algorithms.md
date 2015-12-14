@@ -39,13 +39,13 @@ Bellow I will list a few good books and courses I have read in regards to algori
 
 ##Great overall algorithm books:
 
-<a href="http://www.algorist.com/" target="_blank">Steven Skiena - The Algorithm Design Manual</a>
+<a href="http://amzn.to/1Z7qe0Y" target="_blank">Steven Skiena - The Algorithm Design Manual</a>
 
-<a href="http://www.amazon.com/Computer-Programming-Volumes-1-4A-Boxed/dp/0321751043" target="_blank"> Donalt Knuth - The Art Of Computer Programming</a>
+<a href="http://amzn.to/1YepKEf" target="_blank"> Donalt Knuth - The Art Of Computer Programming</a>
 
 ##Good for job interviews:
 
-<a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X" target="_blank">Gayle Laakmann McDowell - Cracking the Coding Interview</a>
+<a href="http://amzn.to/1Z7qjSC" target="_blank">Gayle Laakmann McDowell - Cracking the Coding Interview</a>
 
 ##Good online courses:
 
