@@ -20,5 +20,9 @@ Next, lets create a Node.js project and install the following modules to work wi
   npm install pg-hstore --save
   ```
   
+<a href="http://docs.sequelizejs.com/en/latest/docs/getting-started/" target="_blank"> Sequelize </a> is a promise-based ORM for Node.js and io.js. It supports the dialects PostgreSQL, MySQL, MariaDB, SQLite and MSSQL and features solid transaction support, relations, read replication and more.
+
+<a href="https://www.npmjs.com/package/pg" target="_blank"> pg <a> is PostgreSQL client for node.js. Pure JavaScript and optional native libpq bindings and <a href="https://www.npmjs.com/package/pg-hstore" target="_blank"> pg-hstore </a> is a module for serializing and deserializing JSON data into Postgres hstore key/value pair format.
+  
 
   
