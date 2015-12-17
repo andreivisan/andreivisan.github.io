@@ -113,4 +113,29 @@ The code above contains the configuration to our Postgres database as well as it
 
 `freezeTableName: true` - This setting freezes the table name to what you define in your model file as you will see later in the code. Normaly Sequelize tends to add an "s" to the end of the table name that you define in your code if the table name you defined doesn't contain one already. If your table in your Postgres database does contain an "s" at the end then it's all fine, you don't need this setting, but I would use it anyway just for safety measures.
 
+#### Creating the model
+
+Now it's time to create the model. Inside `models` module lets create a file called `tasks.js` that looks like the code snippet bellow:
+
+``` js
+"use strict"
+
+module.exports = function(sequelize, DataTypes) {
+    var Tasks = sequelize.define("Tasks", {
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        completed: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        }
+    }, {
+       tableName: 'Tasks'
+    });
+
+    return Tasks;
+}
+```
+
   
