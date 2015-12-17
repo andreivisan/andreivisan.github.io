@@ -61,7 +61,56 @@ models.sequelize.sync().then(function () {
 });
 ```
 
-Now lets create `models` folder inside our project and add `index.js` file inside it. This file will contain all the configuration and connection code so that Sequelize can connect to our Postgres database.
-  
+Now lets create `models` folder inside our project and add `index.js` file inside it. This file will contain all the configuration and connection code so that Sequelize can connect to our Postgres database. Bellow is the complete code for `/models/index.js` : 
+
+``` js
+"use strict";
+
+var fs        = require("fs");
+var path      = require("path");
+var Sequelize = require("sequelize");
+var sequelize = new Sequelize(process.env.POSTGRESQL_LOCAL_DB, "", "", {
+    host: process.env.POSTGRESQL_LOCAL_HOST,
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: true
+    },
+    freezeTableName: true,
+    pool: {
+        max: 9,
+        min: 0,
+        idle: 10000
+    }
+});
+
+var db = {};
+
+fs
+    .readdirSync(__dirname)
+    .filter(function(file) {
+        return (file.indexOf(".") !== 0) && (file !== "index.js");
+    })
+    .forEach(function(file) {
+        var model = sequelize["import"](path.join(__dirname, file));
+        db[model.name] = model;
+    });
+
+Object.keys(db).forEach(function(modelName) {
+    if ("associate" in db[modelName]) {
+        db[modelName].associate(db);
+    }
+});
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;
+```
+
+The code above contains the configuration to our Postgres database as well as it loads the models that we'll implement in our `models` module. Important to notice in the code above are the following settings:
+
+`dialectOptions: { ssl: true }` - This setting activates SSL for Postgres connections. It is very useful when you connect to an instance on Heroku or Amazon WS.
+
+`freezeTableName: true` - This setting freezes the table name to what you define in your model file as you will see later in the code. Normaly Sequelize tends to add an "s" to the end of the table name that you define in your code if the table name you defined doesn't contain one already. If your table in your Postgres database does contain an "s" at the end then it's all fine, you don't need this setting, but I would use it anyway just for safety measures.
 
   
