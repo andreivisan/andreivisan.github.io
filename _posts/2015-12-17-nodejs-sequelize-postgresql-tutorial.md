@@ -8,7 +8,8 @@ published: false
 
 In this simple tutorial I will show you how to setup and start using Node.js together with Sequelize and PostgreSQL. These are very 
 popular technologies, yet not so widely covered and properly explained how to use together. I will not cover the benefits of each of these technologies since they are very well documented independently. What I will do is show you how to use them together by creating the already infamous To Do List project.
-You can find the full code for this tutorial on <a href="https://github.com/andreivisan/node-sequelize-postgresql" target="_blank"> Github </a> account.
+
+You can find the full code for this tutorial on <a href="https://github.com/andreivisan/node-sequelize-postgresql" target="_blank"> Github </a>.
 
 ### Configuration
 
