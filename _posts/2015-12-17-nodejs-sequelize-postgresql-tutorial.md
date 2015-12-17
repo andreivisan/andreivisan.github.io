@@ -32,7 +32,36 @@ Next step is to create a table called `Tasks` in our Postgres database which has
 
 #### Sequelize configuration
 
-First step we need to take is to configure Sequelize inside our project so it can connect to our database.
+First step we need to take is to configure Sequelize inside our project so it can connect to our database. We need to add the following snipped of code to the `www` file located in the `bin` folder of the project:
+
+``` js
+var models = require("../models");
+
+models.sequelize.sync().then(function () {
+    var server = app.listen(app.get('port'), function() {
+        debug('Express server listening on port ' + server.address().port);
+    });
+});
+```
+
+So now the `www` file should look something like this:
+
+``` js
+#!/usr/bin/env node
+var debug = require('debug')('node-sequelize-postgresql');
+var app = require('../app');
+var models = require("../models");
+
+app.set('port', process.env.PORT || 3000);
+
+models.sequelize.sync().then(function () {
+    var server = app.listen(app.get('port'), function() {
+        debug('Express server listening on port ' + server.address().port);
+    });
+});
+```
+
+Now lets create `models` folder inside our project and add `index.js` file inside it. This file will contain all the configuration and connection code so that Sequelize can connect to our Postgres database.
   
 
   
