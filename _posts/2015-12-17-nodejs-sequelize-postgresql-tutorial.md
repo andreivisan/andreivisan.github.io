@@ -145,7 +145,7 @@ module.exports = function(sequelize, DataTypes) {
 
 ### CRUD operations
 
-#### Create tasks
+#### Create and read tasks
 
 First let's create the view where we will add and list the taks. I modified `views/index.ejs` to look like bellow:
 
@@ -199,6 +199,6 @@ router.post('/add-task', function(req, res) {
 });
 ```
 
-As you can see Sequelize helps us to easily add and also list all the tasks we have created so far.
+As you can see Sequelize helps us to easily add and also list all the tasks we have created so far. We used `save` method to save the task and `findAll({})` to find all tasks. Sequelize offers also a `all()` method to retrieve all tasks, the difference being that with `findAll({})` you can add filters to get all items that match your condition.
 
   
