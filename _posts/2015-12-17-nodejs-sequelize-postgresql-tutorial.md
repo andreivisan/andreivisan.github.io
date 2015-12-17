@@ -75,6 +75,9 @@ var sequelize = new Sequelize(process.env.POSTGRESQL_LOCAL_DB, "", "", {
     dialectOptions: {
         ssl: true
     },
+    define: {
+        timestamps: false
+    },
     freezeTableName: true,
     pool: {
         max: 9,
@@ -113,6 +116,8 @@ The code above contains the configuration to our Postgres database as well as it
 
 `freezeTableName: true` - This setting freezes the table name to what you define in your model file as you will see later in the code. Normaly Sequelize tends to add an "s" to the end of the table name that you define in your code if the table name you defined doesn't contain one already. If your table in your Postgres database does contain an "s" at the end then it's all fine, you don't need this setting, but I would use it anyway just for safety measures.
 
+`define: { timestamps: false }` - Sequelize adds by default timestamp columns like `updatedAt` and `createdAt`. If you don't want those columns in your table then set `timestamps` field to false.
+
 #### Creating the model
 
 Now it's time to create the model. Inside `models` module lets create a file called `tasks.js` that looks like the code snippet bellow:
@@ -137,5 +142,63 @@ module.exports = function(sequelize, DataTypes) {
     return Tasks;
 }
 ```
+
+### CRUD operations
+
+#### Create tasks
+
+First let's create the view where we will add and list the taks. I modified `views/index.ejs` to look like bellow:
+
+``` html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tasks</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Tasks</h1>
+
+    <div id="task-add-div">
+        <form action="/add-task" id="addTaskForm" method="post" role="form">
+            <label>Task: </label>
+            <input name="taskName" type="text" placeholder="E.g. Code more" class="form-control">
+            <div>
+                <button type="submit"><strong>ADD TASK</strong></button>
+            </div>
+        </form>
+    </div>
+
+    <div id="task-list">
+      <ul>
+        <% if(tasks) { %>
+          <% tasks.forEach(function(task) { %>
+            <li><%= task.title %></li>
+          <% }) %>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+</html>
+```
+
+Now for the next step let's create the `add-task` action which will add a task to our database. Inside `routes/index.js` I created the following function:
+
+``` js
+router.post('/add-task', function(req, res) {
+  models.Tasks
+        .build({
+            title: req.body.taskName,
+            completed: false})
+        .save()
+        .then(function() {
+          models.Tasks.findAll({}).then(function(taskList) {
+                res.render('index', {tasks: taskList});
+            });
+        });
+});
+```
+
+As you can see Sequelize helps us to easily add and also list all the tasks we have created so far.
 
   
