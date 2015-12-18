@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Node.js, Sequelize, PostgreSQL tutorial
-published: false
+published: true
 ---
 
 ### Introduction
@@ -32,7 +32,7 @@ Next step is to create a table called `Tasks` in our Postgres database which has
 
 #### Sequelize configuration
 
-First step we need to take is to configure Sequelize inside our project so it can connect to our database. We need to add the following snipped of code to the `www` file located in the `bin` folder of the project:
+First step we need to take is to configure Sequelize inside our project so it can connect to our database. We need to add the following snippet of code to the `www` file located in the `bin` folder of the project:
 
 ``` js
 var models = require("../models");
@@ -147,7 +147,7 @@ module.exports = function(sequelize, DataTypes) {
 
 #### Create and read tasks
 
-First let's create the view where we will add and list the taks. I modified `views/index.ejs` to look like bellow:
+First let's create the view where we will add and list the tasks. I modified `views/index.ejs` to look like bellow:
 
 ``` html
 <!DOCTYPE html>
@@ -286,5 +286,5 @@ If you now refresh `http://localhost:3000/` you will see that the task with `id=
 
 ### Conclusion
 
-This is the basic code to integrate with a Postgres database. You can use this as the base code for a bigger project as you already have your database set up. You can find the full code for this tutorial on <a href="https://github.com/andreivisan/node-sequelize-postgresql" target="_blank"> Github </a>.
+This is the basic code to integrate with a Postgres database. You can use this as the base code for a bigger project as you already have your database and your Sequelize integration set up. You can find the full code for this tutorial on <a href="https://github.com/andreivisan/node-sequelize-postgresql" target="_blank"> Github </a>.
 Please leave a comment bellow if you need more help or if you found this post useful.
