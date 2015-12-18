@@ -200,5 +200,45 @@ router.post('/add-task', function(req, res) {
 ```
 
 As you can see Sequelize helps us to easily add and also list all the tasks we have created so far. We used `save` method to save the task and `findAll({})` to find all tasks. Sequelize offers also a `all()` method to retrieve all tasks, the difference being that with `findAll({})` you can add filters to get all items that match your condition.
+The full code for `routes/index.js` should look something like the snipped bellow:
+
+``` js
+var express = require('express');
+var router = express.Router();
+
+var models = require("../models");
+
+/* GET home page. */
+router.get('/', function(req, res) {
+  models.Tasks.all().then(function(taskList) {
+    res.render('index', {tasks: taskList});
+  });
+});
+
+router.post('/add-task', function(req, res) {
+  models.Tasks
+        .build({
+            title: req.body.taskName,
+            completed: false})
+        .save()
+        .then(function() {
+          models.Tasks.findAll({}).then(function(taskList) {
+                res.render('index', {tasks: taskList});
+            });
+        });
+});
+
+module.exports = router;
+```
+
+As you can see I also modified the function that handles `'/'` request to display all task if there are any. And for this I used the `all()` method that I spoke about above.
+
+Now you should navigate to `http://localhost:3000/` and add a few task to play with what we have created. For the next DB operations, update and delete, we will use the command line and then test the results on our home page. So I suggest you should add at least 3 tasks so you have some data to play with.
+
+#### Update
+
+
+
+`curl -X PUT -d "title=Modified task" -d "completed=true" http://127.0.0.1:3000/task/2`
 
   
