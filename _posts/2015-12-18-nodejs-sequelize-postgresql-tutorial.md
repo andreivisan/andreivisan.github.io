@@ -237,8 +237,34 @@ Now you should navigate to `http://localhost:3000/` and add a few task to play w
 
 #### Update
 
+In order to perform an update operation we need to implement a `PUT` method. The code bellow implements the update method:
 
+``` js
+router.put('/task/:id', function(req, res) {
+  models.Tasks.find({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(task) {
+    if(task) {
+      task.updateAttributes({
+        title: req.body.title,
+        completed: req.body.completed
+      }).then(function(task) {
+        res.send(task);
+      });
+    }
+  });
+});
+```
+Now in order to test run the server and then the following command:
 
 `curl -X PUT -d "title=Modified task" -d "completed=true" http://127.0.0.1:3000/task/2`
+
+If you now refresh `http://localhost:3000/` you will see that the task with `id=2` is modified with the new title.
+
+#### Delete
+
+`curl -X DELETE http://127.0.0.1:3000/task/1`
 
   
