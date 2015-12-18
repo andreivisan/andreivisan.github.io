@@ -265,6 +265,26 @@ If you now refresh `http://localhost:3000/` you will see that the task with `id=
 
 #### Delete
 
+In order to perform an update operation we need to implement a `DELETE` method. The code bellow implements the delete method:
+
+``` js
+router.delete('/task/:id', function(req, res) {
+  models.Tasks.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(task) {
+    res.json(task);
+  });
+});
+```
+Now in order to test run the server and then the following command:
+
 `curl -X DELETE http://127.0.0.1:3000/task/1`
 
-  
+If you now refresh `http://localhost:3000/` you will see that the task with `id=1` is removed.
+
+### Conclusion
+
+This is the basic code to integrate with a Postgres database. You can use this as the base code for a bigger project as you already have your database set up. You can find the full code for this tutorial on <a href="https://github.com/andreivisan/node-sequelize-postgresql" target="_blank"> Github </a>.
+Please leave a comment bellow if you need more help or if you found this post useful.
