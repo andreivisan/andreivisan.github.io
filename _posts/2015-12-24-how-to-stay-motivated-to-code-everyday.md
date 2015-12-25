@@ -4,8 +4,10 @@ title: How to stay motivated to code everyday
 published: false
 ---
 
-Just finished reading an amazing book called The War of Art, written by Steven Pressfield.
-This is one of the few books that gave me a complete new look at the craft of programming and why what we create is art and how we can give it more than we actually do.
+Just finished reading an amazing book called The War of Art, written by Steven Pressfield. This is one of the few books that gave me a complete new look at the craft of programming and why what we create is art and how we can give it more than we actually do.
+
+<a rel="nofollow" href="http://www.amazon.co.uk/gp/product/1936891026/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=1936891026&linkCode=as2&tag=progrlife-21">The War of Art: Break Through the Blocks and Win Your Inner Creative Battles</a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=progrlife-21&l=as2&o=2&a=1936891026" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
 A while ago, after reading again John Resig's post about coding everyday, I decided I should do the same since I have quite a few projects I started, and do believe in them but they seem to never end.
 Maybe as a coincidence, just after finishing this post, I started reading The War of Art which came as a deeper explanation to why we should dedicate more to our craft and also explained very well what keeps us back from doing so.
 Everyone of us, believed at one point, that external factors are blocking us from sitting down everyday and do what essentially we love the most, coding. We all thought that maybe a cold, a fight with our partner, a crying baby, life, an unsatisfactory job, a not so big income etc. caused us not to sit down and put the work to finish something that we so enthusiastically started but we never seem to finish. In this book , the author clearly explains that all the above is called Resistance, and that is not caused by those external factors, but by internal ones, and that essentially we let all those factors take the shape of Resistance and win over us. We, thus postponed sitting down and doing our task, and by doing this we found that tomorrow we postponed again, and postponing became a habit , procrastination became a habit, Resistance won, and we were never able to finish our work. This built frustration, frustration built unhappiness and we started question our love for the craft.
