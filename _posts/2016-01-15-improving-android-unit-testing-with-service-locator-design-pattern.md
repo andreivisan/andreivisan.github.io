@@ -89,5 +89,40 @@ public class MainActivity extends Activity {
 }
 ```
 
-Now that we have the Activity implementation and our Service Locator Pattern implemented let's see how can this help us for testing
+Now that we have the Activity implementation, I would like to test its functionality without calling the `fetchInformation(url, myCallback)` method as that will be tested separately and I don't want it to bother me during the Activity testing. Let's see how our Service Locator Pattern implementation can help us for testing. Bellow is the implementation of our test class.
+
+``` java
+@RunWith(RobolectricGradleTestRunner.class)
+@Config(constants = BuildConfig.class, sdk = 22, manifest = "src/main/AndroidManifest.xml")
+public class MainActivityTest {
+
+    private MainActivity mainActivity;
+    private Service service;
+    
+    @Before
+    public void setUp() throws Exception {
+        super.setUp();
+        
+        service = mock(ServiceImpl.class);
+        doNothing().when(service).fetchData(anyString(), (MyCallback)any());
+        
+        ServiceLocator.getInstance().setService(service);
+        mainActivity = Robolectric.buildActivity(MainActivity.class).create().get();
+        
+        //...
+    }
+    
+    @Test
+    public void myTest() throws Exception {
+        //...
+    }
+
+}
+```
+
+As you can see above, the service locator helped me inject the mock service into the Activity, so now the call to `fetchData(...)` will be ignored because of this line: `doNothing().when(service).fetchData(anyString(), (MyCallback)any());`.
+
+### Conclusion
+
+
 
