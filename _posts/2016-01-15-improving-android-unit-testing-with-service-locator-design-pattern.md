@@ -12,6 +12,21 @@ The biggest challenge I found while writing unit tests in Android is injecting m
 
 The solution that I came up with was to implement the Service Locator Design Pattern in order to set which service instance I want to use depending on the context.
 
+Another solution would be to use <a href="http://square.github.io/dagger/" target="_blank"> Dagger </a> in order to make use of Dependency Injection, but I usualy prefer to add as few external libraries as possible in my apps.
+
 ### Service Locator Design Pattern
+
+As per Wikipedia definition, the Service Locator Pattern is a design pattern used in software development to encapsulate the processes involved in obtaining a service with a strong abstraction layer. This pattern uses a central registry known as the "service locator", which on request returns the information necessary to perform a certain task.
+
+### Implementation
+
+Let's assume we have a service interface that I will call `Service.java` and an implementation of it called `ServiceImpl.java`.
+
+``` java 
+public interface Service {
+    void fetchInformation(String url, final MyCallback callback);
+}
+```
+
 
 
