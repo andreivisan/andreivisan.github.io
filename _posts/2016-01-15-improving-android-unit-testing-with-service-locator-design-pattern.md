@@ -124,5 +124,8 @@ As you can see above, the service locator helped me inject the mock service into
 
 ### Conclusion
 
+I find the Service Locator Pattern to be of huge help when writing unit tests and dealing with concepts like Dependency Injection and partial mocks. These concepts are very difficult to implement in Android and this patterns makes them accessible without introducing a third party library. If you need to use Dependency Injection for more than testing then I strongly suggest to use <a href="http://square.github.io/dagger/" target="_blank"> Dagger </a>.
+Please let me know in the comments bellow if you found this post useful.
+
 
 
