@@ -69,5 +69,25 @@ public class ServiceLocator {
 }
 ```
 
+Now lets use this service locator to get our service in our Activity class.
 
+``` java
+public class MainActivity extends Activity {
+
+    private Service service;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        //...
+        service = ServiceLocator.getInstance().getService();
+        //...
+        service.fetchInformation(url, new MyCallback() {
+            //...
+        });
+    }
+
+}
+```
+
+Now that we have the Activity implementation and our Service Locator Pattern implemented let's see how can this help us for testing
 
