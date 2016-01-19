@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Task manager using Node.js EventEmitter and EventSource
-published: false
+published: true
 ---
 
 ### Introduction
@@ -18,7 +18,7 @@ In the end the application should look like the image bellow:
 
 The `EventSource` interface is used to receive server-sent events. It connects to a server over HTTP and receives events in text/event-stream format without closing the connection. So, in a way, it acts like a web socket by keeping an open communication with the server until this connection is specifically closed.
 
-An important fact that is worth mentioning is that `EventSource` is not supported on IE (Internet Explorer). So, in case you want to use something simillar that is compatible with IE as well then web sockets are the safe bet.
+An important fact that is worth mentioning is that `EventSource` is not supported on IE (Internet Explorer). So, in case you want to use something similar that is compatible with IE as well, then web sockets are the safe bet.
 
 ### The code
 
@@ -99,7 +99,7 @@ function stopTimer() {
 
 As you can see in the code above, I created a new `EventSource` that points to an URL on the server. At this point the communication between the server and the client is opened. When the server will sent a message on the `response` object, the `onmessage` function is triggered and, in our case, we will add the data that we receive the `Finished at` column.
 
-On the `stopTimer()` function we close the communication with the server.
+On the `stopTimer()` function the communication with the server is closed.
 
 Now that the UI is done, let's move to the server side, where we will start by creating a custom `EventEmitter` that will send the response to the client. For the `EventEmitter` I created a new module called `task-events`.
 
