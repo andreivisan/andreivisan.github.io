@@ -37,11 +37,11 @@ By reading <a href="http://www.amazon.com/gp/product/1455586692/ref=as_li_tl?ie=
 
 As during the day I can't just simply isolate myself from the world and start producing great results, I decided to try and wake up at 5 A.M., drink my morning coffee and from 5:30 A.M. until 07:30 or 08:30 A.M. to work on my personal projects. I find this better than working after office hours for several reasons:
 
-    - Being very early in the morning there is nothing that can distract me. There is no email nor any social media that requires my attention that early in the morning.
+- Being very early in the morning there is nothing that can distract me. There is no email nor any social media that requires my attention that early in the morning.
     
-    - At 08:30 A.M. which is very early, I have already accomplished a lot and that motivates me to further continue on this path as well as it takes pressure for having to work hard after office hours.
+- At 08:30 A.M. which is very early, I have already accomplished a lot and that motivates me to further continue on this path as well as it takes pressure for having to work hard after office hours.
     
-    - Also being so early in the morning, my performance is very good as I am well rested so my results are better and more meaningful.
+- Also being so early in the morning, my performance is very good as I am well rested so my results are better and more meaningful.
 
 #### 2. Create fixed times for checking email
 
