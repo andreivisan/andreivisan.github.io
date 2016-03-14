@@ -5,7 +5,7 @@ published: true
 ---
 
 Recently I started reading a very interesting book, written by a new, but famous writer, Cal Newport which also happens to be a computer scientist. The book is called <a href="http://www.amazon.com/gp/product/1455586692/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1455586692&linkCode=as2&tag=progrlife01-20&linkId=FNTWPEOLJTYIQFUZ">Deep Work: Rules for Focused Success in a Distracted World</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=progrlife01-20&l=as2&o=1&a=1455586692" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" target="_blank"/>
-and it has to big parts: Part One handles the why - why deep work is valuable, why deep work is rare and why deep work is meaningful. Part Two handles the how - how can we achieve deep work.  
+and it has two big parts: Part One handles the why - why deep work is valuable, why deep work is rare and why deep work is meaningful. Part Two handles the how - how can we achieve deep work.  
 
 This post will not be a review of this book but more of an experiment I had with this concept of Deep Work and the little hacks I found helpful in achieving this state of focus and flow.
 
