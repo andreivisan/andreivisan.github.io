@@ -50,7 +50,7 @@ One experiment that I found very useful in dealing with email was to check email
 
 #### 3. Stay offline from internal chat
 
-Internal chat is one of the worst distraction from your work as any small chat can easily turn into a big conversation and gossip. By mostly staying offline from internal chat will discourage people from approaching you as they will either have to send an email - for which we already have a solution - or come to your desk directly - for which I will present another solution next.
+Internal chat is one of the worst distractions from your work as any small chat can easily turn into a big conversation and gossip. By mostly staying offline from internal chat will discourage people from approaching you as they will either have to send an email - for which we already have a solution - or come to your desk directly - for which I will present another solution next.
 
 #### 4. Keep your headphones on even though you don't listen to music
 
