@@ -52,7 +52,7 @@ One experiment that I found very useful in dealing with email was to check email
 
 Internal chat is one of the worst distractions from your work as any small chat can easily turn into a big conversation and gossip. By mostly staying offline from internal chat will discourage people from approaching you as they will either have to send an email - for which we already have a solution - or come to your desk directly - for which I will present another solution next.
 
-#### 4. Keep your headphones on even though you don't listen to music
+#### 4. Keep your headphones on even if you don't listen to music
 
 I suggest buying active noise cancelling headphones or very good noise cancelling ones. By having them on most of the time, you will be protected from the open space noise as well as people will think twice before approaching you as headphones are a sign of being busy and in a state of complete focus and flow.
 
