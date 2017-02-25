@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dynamic Factory Pattern for Plugin Loading in Android
+title: Dynamic Factory Pattern for Android
 published: false
 ---
 
@@ -11,7 +11,7 @@ The Dynamic Factory Pattern describes a factory that can create service instance
 
 ### Context
 
-You are building an framework that is composed of different modules that can be fully or partially included in a project. Your framework core is not aware of the contents of the underlying modules in order to offer full flexibility and modularity. The implementing system should be able to implement the framework and later add new modules without having to change the core implementation of the framework.
+You are building a framework that is composed of different modules that can be fully or partially included in a project. Your framework core is not aware of the contents of the underlying modules in order to offer full flexibility and modularity. The implementing system should be able to implement the framework and later add new modules without having to change the core implementation of the framework.
 
 ### Example
 
