@@ -40,7 +40,7 @@ The dynamic factory pattern is a generalized implementation that is responsible 
 
 In order to achieve this and for simplicity, in the core module (called loader in the GitHub example you can find bellow) I created an enum that holds the name of each module (plugin). Each field contains a method called getServiceName() which returns the full name for the service implementations in each module.
 
-NOTE: Enum was used for the sake of simplicity, for a more robust solution I recommend a stable persistence solution.
+NOTE: Enum was used for the sake of simplicity, for a more robust alternative I recommend a stable persistence solution.
 ----
 
 Plugins.java
