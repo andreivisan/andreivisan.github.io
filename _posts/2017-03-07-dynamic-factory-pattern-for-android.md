@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dynamic Factory Pattern for Android
-published: false
+published: true
 ---
 
 
@@ -34,13 +34,13 @@ By implementing the Dynamic Factory Pattern we are trying to achieve the followi
   
 ### Solution
 
-The dynamic factory pattern is a generalized implemetation that is responsible for creating instances, while not making any a priori decisions about the concrete types of those instances.
+The dynamic factory pattern is a generalized implementation that is responsible for creating instances, while not making any a priori decisions about the concrete types of those instances.
 
 ![Dynamic Factory Pattern](/public/images/Dynamic_Factory_Pattern.png)
 
 In order to achieve this and for simplicity, in the core module (called loader in the GitHub example you can find bellow) I created an enum that holds the name of each module (plugin). Each field contains a method called getServiceName() which returns the full name for the service implementations in each module.
 
-NOTE: Enum was used for the sake of simplicty, for a more robust solution I recommend a stable persistence solution.
+NOTE: Enum was used for the sake of simplicity, for a more robust solution I recommend a stable persistence solution.
 ----
 
 Plugins.java
@@ -132,6 +132,11 @@ public class Plugin1Service implements PluginService {
 ```
 
 You can find the sources for this solution on my Github at [this link](https://github.com/andreivisan/DynamicModuleLoading). 
+
+### Conclusion
+
+The Dynamic Factory Pattern adds flexibility and better modularity to an application by abstracting the creation process of instances, exposing it through a well-known entity in the system, and storing all the details about the concrete implementers of the products in metadata. This removes the creation code from the application, hiding it in the factory and the creation metadata.
+Additionally, it makes easier to introduce new implementers of a contract in a system, since the location implementation details are encoded in metadata.
 
 
 
