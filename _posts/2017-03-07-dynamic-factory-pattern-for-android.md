@@ -132,7 +132,7 @@ public class Plugin1Service implements PluginService {
 }
 ```
 
-You can find the sources for this solution on my Github at [this link](https://github.com/andreivisan/DynamicModuleLoading). 
+You can find the sources for this solution on my Github at <a href="https://github.com/andreivisan/DynamicModuleLoading" target="_blank">this link</a>
 
 ### Conclusion
 
