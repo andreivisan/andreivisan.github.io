@@ -81,7 +81,8 @@ ServiceFactory.java
 ```java
 public class ServiceFactory {
 
-    public PluginService getService(String serviceName) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public PluginService getService(String serviceName) throws ClassNotFoundException, 
+                                         IllegalAccessException, InstantiationException {
         return (PluginService) Class.forName(serviceName).newInstance();
     }
 
