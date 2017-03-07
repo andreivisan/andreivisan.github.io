@@ -36,6 +36,8 @@ By implementing the Dynamic Factory Pattern we are trying to achieve the followi
 
 The dynamic factory pattern is a generalized implemetation that is responsible for creating instances, while not making any a priori decisions about the concrete types of those instances.
 
+![Dynamic Factory Pattern](/public/images/Dynamic_Factory_Pattern.png)
+
 In order to achieve this and for simplicity, in the core module (called loader in the GitHub example you can find bellow) I created an enum that holds the name of each module (plugin). Each field contains a method called getServiceName() which returns the full name for the service implementations in each module.
 
 NOTE: Enum was used for the sake of simplicty, for a more robust solution I recommend a stable persistence solution.
