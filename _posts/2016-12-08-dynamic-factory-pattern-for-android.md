@@ -86,6 +86,49 @@ public class ServiceFactory {
 }
 ```
 
+The ```PluginService.java``` interface implementation is pretty basic as you can see bellow:
+
+```java
+public interface PluginService {
+
+    String action();
+
+}
+```
+
+In the demo app I created, I built 3 methods each containing a call to the appropriate module. In case the module is loaded the implementation will return a text that is set on a text view. In case the module is not loaded ```Plugin is not loaded``` text is set on the text view. Bellow I show you the implementation of one method, for the full source code please find the link to the Github repository bellow.
+
+```java
+private void callPlugin1() {
+    try {
+        pluginService = factory.getService(Plugins.PLUGIN1.getServiceName());
+        plugin1Text.setText(pluginService.action());
+    } catch (ClassNotFoundException e) {
+        plugin1Text.setText("Plugin 1 not loaded");
+    } catch (IllegalAccessException e) {
+        plugin1Text.setText("Plugin 1 not loaded");
+    } catch (InstantiationException e) {
+        plugin1Text.setText("Plugin 1 not loaded");
+    }
+}
+```
+
+Please find bellow the ```Plugin 1``` implementation of the ```PluginService``` interface:
+
+```java
+public class Plugin1Service implements PluginService {
+
+    private static final String TAG = "Plugin1Service";
+
+
+    @Override
+    public String action() {
+        return "Plugin 1 activated";
+    }
+
+}
+```
+
 You can find the sources for this solution on my Github at this <a hef="https://github.com/andreivisan/DynamicModuleLoading"> link </a>. 
 
 
