@@ -41,6 +41,51 @@ In order to achieve this and for simplicity, in the core module (called loader i
 NOTE: Enum was used for the sake of simplicty, for a more robust solution I recommend a stable persistence solution.
 ----
 
+Plugins.java
+
+```java
+public enum Plugins {
+
+    PLUGIN1 {
+        @Override
+        public String getServiceName() {
+            return "io.programminglife.plugin1.Plugin1Service";
+        }
+    },
+
+    PLUGIN2 {
+        @Override
+        public String getServiceName() {
+            return "io.programminglife.plugin2.Plugin2Service";
+        }
+    },
+
+    PLUGIN3 {
+        @Override
+        public String getServiceName() {
+            return "io.programminglife.plugin3.Plugin3Service";
+        }
+    };
+
+    public abstract String getServiceName();
+
+}
+```
+
+I also created a service factory, which based on the service name defined above instantiate the appropriate implementation.
+
+ServiceFactory.java
+
+```java
+public class ServiceFactory {
+
+    public PluginService getService(String serviceName) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        return (PluginService) Class.forName(serviceName).newInstance();
+    }
+
+}
+```
+
 You can find the sources for this solution on my Github at this <a hef="https://github.com/andreivisan/DynamicModuleLoading"> link </a>. 
 
 
