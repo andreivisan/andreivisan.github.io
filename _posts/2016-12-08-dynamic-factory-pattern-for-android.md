@@ -39,7 +39,7 @@ The dynamic factory pattern is a generalized implemetation that is responsible f
 In order to achieve this and for simplicity, in the core module (called loader in the GitHub example you can find bellow) I created an enum that holds the name of each module (plugin). Each field contains a method called getServiceName() which returns the full name for the service implementations in each module.
 
 NOTE: Enum was used for the sake of simplicty, for a more robust solution I recommend a stable persistence solution.
------
+----
 
 You can find the sources for this solution on my Github at this <a hef="https://github.com/andreivisan/DynamicModuleLoading"> link </a>. 
 
