@@ -26,12 +26,15 @@ How can we define an interface for creating objects that implement a given contr
 
 By implementing the Dynamic Factory Pattern we are trying to achieve the following results:
 
-  1. Flexibility. The implementers of the products should be easily modifiable, even when the system is running, allowing the injection of new product types into an existing system.
-  2. Extensibility. New product types should be easily added without requiring neither a new factory class nor modifying any existing one.
-  3. Controlled Evolution: users can create new types of products conforming to the product interface, but providing unanticipated behavior or features.
-  4. Agility. New types of products should added to the system in a quick and agile manner, avoiding reworking of a factory class any time a new concrete product is created.
-  5. Simplicity. The client interface should be simple, hiding from the client the complex details of dynamic product creation.
+  1. <b>Flexibility</b>. The implementers of the products should be easily modifiable, even when the system is running, allowing the injection of new product types into an existing system.
+  2. <b>Extensibility</b>. New product types should be easily added without requiring neither a new factory class nor modifying any existing one.
+  3. <b>Controlled Evolution</b> : users can create new types of products conforming to the product interface, but providing unanticipated behavior or features.
+  4. <b>Agility</b>. New types of products should added to the system in a quick and agile manner, avoiding reworking of a factory class any time a new concrete product is created.
+  5. <b>Simplicity</b>. The client interface should be simple, hiding from the client the complex details of dynamic product creation.
   
+### Solution
 
+The dynamic factory pattern is a generalized implemetation that is responsible for creating instances, while not making any a priori decisions about the concrete types of those instances.
+In order to accomplish the desired result 
 
 
