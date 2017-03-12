@@ -50,28 +50,35 @@ python3 get-pip.py —user
 
 3. Add the executable path to your PATH variable:
 
+```
 export PATH=~/.local/bin:$PATH
-
 $ source ~/.bash_profile
-
+```
 
 4. Verify that ```pip``` is installed correctly:
 
+```
 pip3 --version
+```
 
 5. Install AWS CLI:
 
+```
 pip3 install awscli —upgrade —user
+```
 
 6. Verify that the AWS CLI installed correctly:
 
+```
 aws —version
+```
 
 #### Install AWS CLI with Homebrew on Mac OS
 
+```
 brew install awscli
-
 aws —version
+```
 
 ### Creating an Amazon ES domain
 
@@ -107,11 +114,15 @@ NOTE: It will take a few minutes until your ES instance is activated. Once is do
 
 1. To add a single document use:
 
+```
 curl -XPUT search-movies-4f3nw7eiia2xiynjr55a2nao2y.us-west-1.es.amazonaws.com/movies/movie/tt0116996 -d '{"directors" : ["Tim Burton"],"genres" : ["Comedy","Sci-Fi"],"plot" : "The Earth is invaded by Martians with irresistible weapons and a cruel sense of humor.","title" : "Mars Attacks!","actors" : ["Jack Nicholson","Pierce Brosnan","Sarah Jessica Parker"],"year" : 1996}'
+```
 
 2. To upload a JSON file that contains multiple documents to Amazon ES domain:
 
+```
 curl -XPOST 'http://search-movies-4f3nw7eiia2xiynjr55a2nao2y.us-west-1.es.amazonaws.com/_bulk' --data-binary @bulk_movies.json
+```
 
 3. Using Node.js
 
@@ -135,7 +146,8 @@ module.exports.pingElasticsearch = function(callback) {
         }
     });
 }
+```
 
-For more information about how to work with Elasticsearch and Node.js read <a href=“http://programminglife.io/searching-with-elasticsearch-and-node.js/” target=“_blank">here</a>.
+For more information about how to work with Elasticsearch and Node.js read <a href="http://programminglife.io/searching-with-elasticsearch-and-node.js/" target="_blank">here</a>.
 
 I hope you found this article useful. If so please leave a comment bellow in the comments section.
