@@ -88,15 +88,15 @@ aws —version
 4. Choose the version of Elasticsearch that you desire. Amazon recommends version 5.1.
 5. Click on Next button.
 6. For the instance count choose the number of instances you want.
-7. For instance type choose an instance type from the Amazon ES domain. (I recommend t2.small.elasticsearch in case you just want to do some testing). You can learn more about Amazon WS free tier here: https://aws.amazon.com/free/
-8. You can use Enable dedicated master or Enable zone awareness. For the purpose of this tutorial I didn’t enable them. You can read more about them here: http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness and http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes. 
+7. For instance type choose an instance type from the Amazon ES domain. (I recommend t2.small.elasticsearch in case you just want to do some testing). You can learn more about Amazon WS free tier <a href="https://aws.amazon.com/free/" target="_blank"> here </a>.
+8. You can use Enable dedicated master or Enable zone awareness. For the purpose of this tutorial I didn’t enable them. You can read more about them <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness and http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes" target="_blank"> here </a>. 
 9. If you want to use EBS volume storage, for Storage type, choose EBS.
-    1. For EBS volume type choose the external storage type. For more information check here: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html
+    1. For EBS volume type choose the external storage type. For more information check <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html" target="_blank">here</a>.
     2. For EBS volume size type the size in GB for the external storage for each data node. Use the following formula (number of data nodes) * (EBS volume size).
 10. For Automated snapshot start hour, choose the hour of the day when automated snapshots will be taken.
 11. (Optional) Choose Advanced options: 
     1. (Optional) If you want to configure access to domain sub-resources, for rest.action.multi.allow_explicit_index choose false.
-    2. For indices.fielddata.cache.size specify the percentage of heap space to allocate to the field data cache. By default this setting in unbounded. For more information check here: https://www.elastic.co/guide/en/elasticsearch/reference/1.5/index-modules-fielddata.html
+    2. For indices.fielddata.cache.size specify the percentage of heap space to allocate to the field data cache. By default this setting in unbounded. For more information check <a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.5/index-modules-fielddata.html" target="_blank">here</a>. 
 12. Choose Next.
 13. Enter an access policy for the domain or select one of the policy templates from Select a template and then choose Next.
 14. Review the new domain configuration and then choose Confirm and create.
@@ -108,7 +108,7 @@ NOTE: It will take a few minutes until your ES instance is activated. Once is do
 1. Go to https://aws.amazon.com and then choose Sign In to the Console.
 2. In the navigation pane, under My Domains choose the domain that you want to configure.
 3. Choose Modify access policy.
-4. Enter your current access policy or select one of the policy templates from Select a template and then choose Submit. For more information read here: http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies.
+4. Enter your current access policy or select one of the policy templates from Select a template and then choose Submit. For more information read <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">here</a>.
 
 ### Upload data to Amazon ES for indexing and searching
 
