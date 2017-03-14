@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Full step by step Amazon AWS Elasticsearch setup and usage
-published: false
+published: true
 ---
 
 ### Introduction
