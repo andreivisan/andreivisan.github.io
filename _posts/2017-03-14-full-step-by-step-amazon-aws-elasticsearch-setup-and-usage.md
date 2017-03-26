@@ -6,12 +6,12 @@ published: true
 
 ### Introduction
 
-This tutorial shows you how to install and use Elasticsearch using Amazon AWS. For this we will use Amazon Elasticsearch Service (Amazon ES) to configure a domain. Elasticsearch is a very popular open-source and analytics engine and you can find more about it HERE. 
+This tutorial shows you how to install and use Elasticsearch using Amazon AWS. For this we will use Amazon Elasticsearch Service (Amazon ES) to configure a domain. Elasticsearch is a very popular open-source and analytics engine and you can find more about it <a href="https://www.elastic.co" target="_blank">here</a>. 
 This tutorial can be completed using Amazon ES console, AWS CLI or the AWS SDK. In this tutorial I will use Amazon ES console, but I also recommend you have installed the AWS CLI.
 
 ### AWS CLI installation
 
-1. Open <a href="https://console.aws.amazon.com/iam/home?#/home">IAM (Identity Access Management) console</a>.
+1. Open <a href="https://console.aws.amazon.com/iam/home?#/home" target="_blank">IAM (Identity Access Management) console</a>.
 2. In the navigation pane choose Users.
 3. Choose your IAM user name.
 4. Choose the Security Credentials tab and then choose Create Access Key.
