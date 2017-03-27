@@ -18,7 +18,7 @@ I know the popular apps out there that already handle that for you, from the mob
 1. Add expenses
     1. Add expenses manually
     2. Add a CSV report of your expenses - most banks allow you to export a CSV file with your expenses. If your bank uses a different format feel free to fork the repository and add support for more file types.
-2. Create expenses categories: The web application will allow to manually add new categories and rules, based on which expenses imported in bulk via CSV file upload will automatically be categorized.
+2. Create expenses categories: the web application will allow to manually add new categories and rules, based on which expenses imported in bulk via CSV file upload will automatically be categorized.
 3. Create budget: The web application will allow to set budgets and limits for each budget.
 
 If you think of any other cool features for this application feel free to add fork the repository and add them yourself, or suggest them in the comments bellow and we may add them in a future tutorial.
