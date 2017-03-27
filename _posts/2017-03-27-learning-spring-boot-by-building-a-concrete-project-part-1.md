@@ -31,7 +31,7 @@ Spring offers good documentation that you can follow <a href="https://projects.s
 
 ### Getting started
 
-Spring Boot 2.0.0.BUILD-SNAPSHOT requires Java 8 and Spring Framework 5.0.0.BUILD-SNAPSHOT or above. Explicit build support is provided for Maven (3.2+), and Gradle 3 (3.4 or later).
+Spring Boot 2.0.0.BUILD requires Java 8 and Spring Framework 5.0.0 or above. Explicit build support is provided for Maven (3.2+), and Gradle 3 (3.4 or later).
 
 You can find many ways of installing Spring Boot href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank">here</a> but for this tutorial we will use Spring Initializr, which is an online tool that generates your Spring Boot project and all you need to do is import it in you IDE.
 
