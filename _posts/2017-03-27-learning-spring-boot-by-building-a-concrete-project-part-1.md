@@ -35,8 +35,8 @@ Spring Boot 2.0.0.BUILD-SNAPSHOT requires Java 8 and Spring Framework 5.0.0.BUIL
 
 You can find many ways of installing Spring Boot <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank">here</a> but for this tutorial we will use Spring Initializr, which is an online tool that generates your Spring Boot project and all you need to do is import it in you IDE.
 
-Open href="https://start.spring.io" target="_blank"> Spring Initializr </a> page. Click on the ```Switch to full version``` link so that you can have an overview of the list of option from which you can pick in order to generate your project.
+Open <a href="https://start.spring.io" target="_blank"> Spring Initializr </a> page. Click on the ```Switch to full version``` link so that you can have an overview of the list of option from which you can pick in order to generate your project.
 
 In the ```Group``` section fill in you desired package name (E.g. io.programminglife), select your artifact name (E.g. finance) and for dependecies I chose Web, Security, JPA, Actuator, Thymeleaf and Session. If we need more we can manually add more to our pom.xml file. Press on ```Generate project``` and you should have a folder downloaded in your preferred downloads location. All you have to do now is just import it in your IDE of choice and you have a fully running Spring Boot project.
 
-In the next post we will start coding our actual logic for our project so stay tuned for that. In the meantime you can find the sources for this tutorial on href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank"> my GitHub </a>.
+In the next post we will start coding our actual logic for our project so stay tuned for that. In the meantime you can find the sources for this tutorial on <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started" target="_blank"> my GitHub </a>.
