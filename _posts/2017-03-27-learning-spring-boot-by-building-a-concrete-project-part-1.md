@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning Spring Boot by building a concrete project - Part 1
-published: false
+published: true
 ---
 
 ### Introduction
