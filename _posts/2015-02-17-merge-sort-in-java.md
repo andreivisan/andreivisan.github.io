@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MERGE SORT IN JAVA
+title: Merge sort in Java
 published: true
 ---
 

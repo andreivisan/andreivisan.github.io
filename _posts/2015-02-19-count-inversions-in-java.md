@@ -1,6 +1,6 @@
 ---
 layout: post
-title: COUNT INVERSIONS IN JAVA
+title: Count inversions in Java
 published: true
 ---
 
