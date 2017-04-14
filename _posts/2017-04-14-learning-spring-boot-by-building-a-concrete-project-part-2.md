@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning Spring Boot by building a concrete project - Part 2
-published: false
+published: true
 ---
 
 ### Part 1 summary
@@ -31,6 +31,7 @@ This means that we didn't give Spring Boot enough information to auto-configure 
 
 If you want to make your application run without configuring any data sources you have to add the following line to your ```FinanceApplication.java``` file:  ```@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})```. Now your class should look like this:
 
+``` java
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 public class FinanceApplication {
@@ -40,6 +41,7 @@ public class FinanceApplication {
    }
 
 }
+```
 
 We also added Spring Session and Spring Security as dependencies. We will comment them out so that we can run or app. Your ```pom.xml``` file should look like this:
 
@@ -112,7 +114,7 @@ We also added Spring Session and Spring Security as dependencies. We will commen
    <build>
       <plugins>
          <plugin>
- <groupId>org.springframework.boot</groupId>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
          </plugin>
       </plugins>
@@ -236,5 +238,5 @@ NOTE: Don’t forget to update with your database credentials.
 
 Now you can run again the app and go to ```http://localhost:8080``` and you can see again the ```Hello World``` message.
 
-In the next post we will finish our JPA implementation and we will cover security as well. In the meantime you can find the sources for this tutorial on href="https://github.com/andreivisan/finance" target="_blank"> my GitHub </a>.
+In the next post we will finish our JPA implementation and we will cover security as well. In the meantime you can find the sources for this tutorial on <a href="https://github.com/andreivisan/finance" target="_blank"> my GitHub </a>.
 
