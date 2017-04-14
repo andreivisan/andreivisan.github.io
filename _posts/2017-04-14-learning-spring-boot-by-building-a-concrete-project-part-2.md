@@ -242,3 +242,5 @@ Now you can run again the app and go to ```http://localhost:8080``` and you can 
 
 In the next post we will finish our JPA implementation and we will cover security as well. In the meantime you can find the sources for this tutorial on <a href="https://github.com/andreivisan/finance" target="_blank"> my GitHub </a>.
 
+<a href="http://programminglife.io/learning-spring-boot-by-building-a-concrete-project-part-1/"> Part 1 </a>
+
