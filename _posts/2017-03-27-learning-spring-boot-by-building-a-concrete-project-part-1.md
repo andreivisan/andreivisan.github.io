@@ -41,4 +41,4 @@ In the ```Group``` section fill in you desired package name (E.g. io.programming
 
 In the next post we will start coding our actual logic for our project so stay tuned for that. In the meantime you can find the sources for this tutorial on <a href="https://github.com/andreivisan/finance" target="_blank"> my GitHub </a>.
 
-<a href="http://programminglife.io/learning-spring-boot-by-building-a-concrete-project-part-1/" target="_blank"> Part 1 </a>
+<a href="http://programminglife.io/learning-spring-boot-by-building-a-concrete-project-part-2/" target="_blank"> Part 2 </a>
