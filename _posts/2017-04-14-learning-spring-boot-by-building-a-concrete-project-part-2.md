@@ -7,11 +7,11 @@ published: false
 ### Part 1 summary
 
 In <a href="http://programminglife.io/learning-spring-boot-by-building-a-concrete-project-part-1/" target="_blank"> Part 1</a> of this tutorial we created a basic structure of our Personal Finance project by using Spring Initializr to configure the package name and dependencies for our project. 
-Import it into your IDE of choice and try running it. If you followed the steps I described there you should have the following error;
+Import it into your IDE of choice and try running it. If you followed the steps I described there you should have the following error:
 
-***************************
+```
 APPLICATION FAILED TO START
-***************************
+
 
 Description:
 
@@ -23,12 +23,13 @@ If you want an embedded database please put a supported one on the classpath. If
 
 
 Process finished with exit code 1
+```
 
 This means that we didn't give Spring Boot enough information to auto-configure a ```DataSource```. 
 
 ### Making your application run
 
-If you want to make your application run without configuring any data sources you have to add the following line to your ```FinanceApplication.java``` file:  ```@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})```. Now your class should look like this:
+If you want to make your application run without configuring any data sources you have to add the following line to your ```FinanceApplication.java``` file:  ```@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})```. Now your class should look like this:
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
@@ -42,6 +43,7 @@ public class FinanceApplication {
 
 We also added Spring Session and Spring Security as dependencies. We will comment them out so that we can run or app. Your ```pom.xml``` file should look like this:
 
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -100,11 +102,11 @@ We also added Spring Session and Spring Security as dependencies. We will commen
          <scope>test</scope>
       </dependency>
 
-<dependency>   
-        <groupId>mysql</groupId>   
-        <artifactId>mysql-connector-java</artifactId>   
-        <scope>runtime</scope>
-</dependency>
+      <dependency>   
+         <groupId>mysql</groupId>   
+         <artifactId>mysql-connector-java</artifactId>   
+         <scope>runtime</scope>
+      </dependency>
    </dependencies>
 
    <build>
@@ -117,6 +119,7 @@ We also added Spring Session and Spring Security as dependencies. We will commen
    </build>
 
 </project>
+```
 
 NOTE: I also added the ```mysql-connector``` dependency.
 
@@ -126,9 +129,11 @@ To configure the datasource I chose ClearDB for Heroku. If you want to learn how
 
 Now we need to configure the following properties inside your ```application.properties``` file in order for Spring Boot to configure our datasource.
 
+```
 spring.datasource.url=
 spring.datasource.username=
 spring.datasource.password=
+```
 
 Once you have configure it, go into your Heroku app for which you have this plugin setup, Settings menu and click on ```Reveal Vars``` in order to get the DB Url. 
 
@@ -136,8 +141,9 @@ For username and password, go back to your app dashboard on Heroku and under ```
 
 In order to finish the datasource integration we need to create the model for our database. In this tutorial we will only create the ```User``` model in order to get our application working and in the next part we will complete  the model creation and security … so stay tuned.
 
-Let’s create a ```model`` package and inside it the ```User.java``` class:
+Let’s create a ```model``` package and inside it the ```User.java``` class:
 
+``` java
 @Entity@Table(name = "user")
 public class User {
 
@@ -205,9 +211,11 @@ public class User {
         this.active = active;    }
 
 }
+```
 
 Now let’s update ```application.properties``` and make it look like this:
 
+```
 # ===============================
 # = DATA SOURCE# 
 # ===============================
@@ -222,10 +230,11 @@ spring.jpa.show-sql = true
 spring.jpa.hibernate.ddl-auto = update
 spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+```
 
 NOTE: Don’t forget to update with your database credentials. 
 
 Now you can run again the app and go to ```http://localhost:8080``` and you can see again the ```Hello World``` message.
 
-In the next post we will finish our JPA implementation and we will cover security as well. In the meantime you can find the sources for this tutorial on href="https://github.com/andreivisan/finance“ target=“_blank”> my GitHub </a>.
+In the next post we will finish our JPA implementation and we will cover security as well. In the meantime you can find the sources for this tutorial on href="https://github.com/andreivisan/finance" target="_blank"> my GitHub </a>.
 
