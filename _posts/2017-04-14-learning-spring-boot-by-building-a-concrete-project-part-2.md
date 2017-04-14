@@ -19,8 +19,8 @@ Cannot determine embedded database driver class for database type NONE
 
 Action:
 
-If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
-
+If you want an embedded database please put a supported one on the classpath. 
+If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
 
 Process finished with exit code 1
 ```
