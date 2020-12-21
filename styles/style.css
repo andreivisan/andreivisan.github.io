@@ -347,12 +347,21 @@ footer h4 {
           flex: 1 1 40rem;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1422px) {
   html {
     font-size: 53%;
   }
+  nav {
+    width: 100%;
+  }
   svg {
-    width: 80%;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 1469px) {
+  html {
+    font-size: 53%;
   }
   nav {
     width: 100%;
