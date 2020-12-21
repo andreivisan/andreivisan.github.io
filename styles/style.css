@@ -348,15 +348,6 @@ footer h4 {
 }
 
 @media screen and (max-width: 1440px) {
-  svg {
-    width: 80%;
-  }
-  nav {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1333px) {
   html {
     font-size: 53%;
   }
@@ -368,7 +359,7 @@ footer h4 {
   }
 }
 
-@media screen and (max-width: 754px) {
+@media screen and (max-width: 988px) {
   html {
     font-size: 45%;
   }
@@ -377,9 +368,6 @@ footer h4 {
   }
   .main-head {
     width: 100%;
-  }
-  nav {
-    margin: 2rem;
   }
   nav .logo {
     display: -webkit-box;
