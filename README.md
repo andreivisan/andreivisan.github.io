@@ -1,1 +1,1 @@
-<img align="right" alt="GIF" src="https://github.com/andreivisan/andreivisan/blob/master/cod.gif?raw=true" width="400" height="250" />
+<img align="right" alt="GIF" src="https://github.com/andreivisan/andreivisan.github.io/blob/master/img/personalfinances.demo.gif?raw=true" width="400" height="250" />
