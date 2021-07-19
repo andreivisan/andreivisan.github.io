@@ -4,6 +4,7 @@ The purpose of this project is to help the user create an overview over their pe
 
 <img align="right" alt="GIF" src="https://github.com/andreivisan/andreivisan.github.io/blob/master/img/personalfinances.demo.gif?raw=true" />
 
+
 ### Features
 
 At this moment the features are quite limited but I will extend them with time.
